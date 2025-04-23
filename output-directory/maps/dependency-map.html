@@ -1,0 +1,3668 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Himdell Dependency Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Use CDN links instead of local files -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js">
+    // Setup the tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(tabId + '-tab').classList.add('active');
+      });
+    });
+    
+    // Initialize the text-flow display
+    const textFlowContainer = document.getElementById('text-flow');
+    textFlowContainer.textContent = `%%{init: {"theme": "default", "flowchart": {"htmlLabels": true, "curve": "basis"}}}%%
+flowchart LR
+  %% Style definitions
+  classDef component fill:#e1f5fe,stroke:#0288d1,color:#01579b,stroke-width:2px
+  classDef context fill:#fff9c4,stroke:#fbc02d,color:#f57f17,stroke-width:2px
+  classDef object fill:#e8f5e9,stroke:#43a047,color:#1b5e20,stroke-width:1px
+  classDef array fill:#f3e5f5,stroke:#8e24aa,color:#4a148c,stroke-width:1px
+  classDef map fill:#ffebee,stroke:#e53935,color:#b71c1c,stroke-width:1px
+  classDef multiConsumer fill:#ede7f6,stroke:#673ab7,color:#311b92,stroke-width:3px
+  classDef provider fill:#e8f5e9,stroke:#43a047,color:#1b5e20,stroke-width:2px,stroke-dasharray:5,5
+  classDef hook fill:#bbdefb,stroke:#1976d2,color:#0d47a1,stroke-width:1px
+  classDef prop fill:#e1f5fe,stroke:#0288d1,color:#01579b,stroke-width:1px,stroke-dasharray:3,3
+
+  subgraph Components
+    subgraph contexts_components["contexts"]
+  authcontext["<div title="Component: AuthContext
+File: /home/ctp/Github/shuk-sham/contexts/AuthContext.tsx
+Props: 0
+Contexts Used: 0"><b>AuthContext</b>
+(Props: 0)</div>"]:::component
+  cartcontext["<div title="Component: CartContext
+File: /home/ctp/Github/shuk-sham/contexts/CartContext.tsx
+Props: 0
+Contexts Used: 0"><b>CartContext</b>
+(Props: 0)</div>"]:::component
+  datacontext["<div title="Component: DataContext
+File: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx
+Props: 0
+Contexts Used: 0"><b>DataContext</b>
+(Props: 0)</div>"]:::component
+  dealscontext["<div title="Component: DealsContext
+File: /home/ctp/Github/shuk-sham/contexts/DealsContext.tsx
+Props: 0
+Contexts Used: 0"><b>DealsContext</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph components_components["components"]
+  backgroundfetcher["<div title="Component: BackgroundFetcher
+File: /home/ctp/Github/shuk-sham/components/BackgroundFetcher.tsx
+Props: 0
+Contexts Used: 0"><b>BackgroundFetcher</b>
+(Props: 0)</div>"]:::component
+  browseviewwrapper["<div title="Component: BrowseViewWrapper
+File: /home/ctp/Github/shuk-sham/components/BrowseViewWrapper.tsx
+Props: 0
+Contexts Used: 0"><b>BrowseViewWrapper</b>
+(Props: 0)</div>"]:::component
+  categoryselectionmain["<div title="Component: CategorySelectionMain
+File: /home/ctp/Github/shuk-sham/components/CategorySelectionMain.tsx
+Props: 0
+Contexts Used: 0"><b>CategorySelectionMain</b>
+(Props: 0)</div>"]:::component
+  conditionalhero["<div title="Component: ConditionalHero
+File: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx
+Props: 2
+Contexts Used: 0"><b>ConditionalHero</b>
+(Props: 2)</div>"]:::component
+  header["<div title="Component: Header
+File: /home/ctp/Github/shuk-sham/components/Header.tsx
+Props: 0
+Contexts Used: 0"><b>Header</b>
+(Props: 0)</div>"]:::component
+  headersearch["<div title="Component: HeaderSearch
+File: /home/ctp/Github/shuk-sham/components/HeaderSearch.tsx
+Props: 0
+Contexts Used: 0"><b>HeaderSearch</b>
+(Props: 0)</div>"]:::component
+  hero["<div title="Component: Hero
+File: /home/ctp/Github/shuk-sham/components/Hero.tsx
+Props: 2
+Contexts Used: 0"><b>Hero</b>
+(Props: 2)</div>"]:::component
+  productbadges["<div title="Component: ProductBadges
+File: /home/ctp/Github/shuk-sham/components/ProductBadges.tsx
+Props: 2
+Contexts Used: 0"><b>ProductBadges</b>
+(Props: 2)</div>"]:::component
+  productbreadcrumb["<div title="Component: ProductBreadcrumb
+File: /home/ctp/Github/shuk-sham/components/ProductBreadcrumb.tsx
+Props: 1
+Contexts Used: 0"><b>ProductBreadcrumb</b>
+(Props: 1)</div>"]:::component
+  productcard["<div title="Component: ProductCard
+File: /home/ctp/Github/shuk-sham/components/ProductCard.tsx
+Props: 2
+Contexts Used: 0"><b>ProductCard</b>
+(Props: 2)</div>"]:::component
+  productpagecontent["<div title="Component: ProductPageContent
+File: /home/ctp/Github/shuk-sham/components/ProductPageContent.tsx
+Props: 2
+Contexts Used: 0"><b>ProductPageContent</b>
+(Props: 2)</div>"]:::component
+  productquickview["<div title="Component: ProductQuickView
+File: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx
+Props: 3
+Contexts Used: 0"><b>ProductQuickView</b>
+(Props: 3)</div>"]:::component
+  productslistmain["<div title="Component: ProductsListMain
+File: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx
+Props: 0
+Contexts Used: 0"><b>ProductsListMain</b>
+(Props: 0)</div>"]:::component
+  saleribbon["<div title="Component: SaleRibbon
+File: /home/ctp/Github/shuk-sham/components/SaleRibbon.tsx
+Props: 3
+Contexts Used: 0"><b>SaleRibbon</b>
+(Props: 3)</div>"]:::component
+  shoppingcart["<div title="Component: ShoppingCart
+File: /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx
+Props: 0
+Contexts Used: 0"><b>ShoppingCart</b>
+(Props: 0)</div>"]:::component
+  singleproductview["<div title="Component: SingleProductView
+File: /home/ctp/Github/shuk-sham/components/SingleProductView.tsx
+Props: 1
+Contexts Used: 0"><b>SingleProductView</b>
+(Props: 1)</div>"]:::component
+  userdashboard["<div title="Component: UserDashboard
+File: /home/ctp/Github/shuk-sham/components/UserDashboard.tsx
+Props: 0
+Contexts Used: 0"><b>UserDashboard</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph _locale__components["[locale]"]
+  layout["<div title="Component: layout
+File: /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx
+Props: 0
+Contexts Used: 0"><b>layout</b>
+(Props: 0)</div>"]:::component
+  not_found["<div title="Component: not-found
+File: /home/ctp/Github/shuk-sham/app/[locale]/not-found.tsx
+Props: 0
+Contexts Used: 0"><b>not-found</b>
+(Props: 0)</div>"]:::component
+  page["<div title="Component: page
+File: /home/ctp/Github/shuk-sham/app/[locale]/page.tsx
+Props: 0
+Contexts Used: 0"><b>page</b>
+(Props: 0)</div>"]:::component
+  providers["<div title="Component: providers
+File: /home/ctp/Github/shuk-sham/app/[locale]/providers.tsx
+Props: 0
+Contexts Used: 0"><b>providers</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph userprofile_components["UserProfile"]
+  orderhistory["<div title="Component: OrderHistory
+File: /home/ctp/Github/shuk-sham/components/UserProfile/OrderHistory.tsx
+Props: 1
+Contexts Used: 0"><b>OrderHistory</b>
+(Props: 1)</div>"]:::component
+  personalinfo["<div title="Component: PersonalInfo
+File: /home/ctp/Github/shuk-sham/components/UserProfile/PersonalInfo.tsx
+Props: 1
+Contexts Used: 0"><b>PersonalInfo</b>
+(Props: 1)</div>"]:::component
+    end
+    subgraph actions_components["actions"]
+  confirmationmodal["<div title="Component: ConfirmationModal
+File: /home/ctp/Github/shuk-sham/components/actions/ConfirmationModal.tsx
+Props: 1
+Contexts Used: 0"><b>ConfirmationModal</b>
+(Props: 1)</div>"]:::component
+  emptycartnotification["<div title="Component: EmptyCartNotification
+File: /home/ctp/Github/shuk-sham/components/actions/EmptyCartNotification.tsx
+Props: 1
+Contexts Used: 0"><b>EmptyCartNotification</b>
+(Props: 1)</div>"]:::component
+  helpmodal["<div title="Component: HelpModal
+File: /home/ctp/Github/shuk-sham/components/actions/HelpModal.tsx
+Props: 2
+Contexts Used: 0"><b>HelpModal</b>
+(Props: 2)</div>"]:::component
+  menu["<div title="Component: Menu
+File: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx
+Props: 2
+Contexts Used: 0"><b>Menu</b>
+(Props: 2)</div>"]:::component
+  productsearchmanager["<div title="Component: ProductSearchManager
+File: /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx
+Props: 2
+Contexts Used: 0"><b>ProductSearchManager</b>
+(Props: 2)</div>"]:::component
+  searchresults["<div title="Component: SearchResults
+File: /home/ctp/Github/shuk-sham/components/actions/SearchResults.tsx
+Props: 1
+Contexts Used: 0"><b>SearchResults</b>
+(Props: 1)</div>"]:::component
+  sharemodal["<div title="Component: ShareModal
+File: /home/ctp/Github/shuk-sham/components/actions/ShareModal.tsx
+Props: 3
+Contexts Used: 0"><b>ShareModal</b>
+(Props: 3)</div>"]:::component
+  shineeffect["<div title="Component: ShineEffect
+File: /home/ctp/Github/shuk-sham/components/actions/ShineEffect.tsx
+Props: 2
+Contexts Used: 0"><b>ShineEffect</b>
+(Props: 2)</div>"]:::component
+  swipetoaction["<div title="Component: SwipeToAction
+File: /home/ctp/Github/shuk-sham/components/actions/SwipeToAction.tsx
+Props: 6
+Contexts Used: 0"><b>SwipeToAction</b>
+(Props: 6)</div>"]:::component
+  notemodal["<div title="Component: noteModal
+File: /home/ctp/Github/shuk-sham/components/actions/noteModal.tsx
+Props: 0
+Contexts Used: 0"><b>noteModal</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph auth_components["auth"]
+  authbutton["<div title="Component: AuthButton
+File: /home/ctp/Github/shuk-sham/components/auth/AuthButton.tsx
+Props: 0
+Contexts Used: 0"><b>AuthButton</b>
+(Props: 0)</div>"]:::component
+  userauthmodal["<div title="Component: UserAuthModal
+File: /home/ctp/Github/shuk-sham/components/auth/UserAuthModal.tsx
+Props: 4
+Contexts Used: 0"><b>UserAuthModal</b>
+(Props: 4)</div>"]:::component
+    end
+    subgraph checkout_components["checkout"]
+  checkout["<div title="Component: Checkout
+File: /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx
+Props: 2
+Contexts Used: 0"><b>Checkout</b>
+(Props: 2)</div>"]:::component
+  checkoutmodal["<div title="Component: CheckoutModal
+File: /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx
+Props: 2
+Contexts Used: 0"><b>CheckoutModal</b>
+(Props: 2)</div>"]:::component
+    end
+    subgraph browse_components["browse"]
+  browseviewmain["<div title="Component: BrowseViewMain
+File: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx
+Props: 0
+Contexts Used: 0"><b>BrowseViewMain</b>
+(Props: 0)</div>"]:::component
+  categorynavigationbar["<div title="Component: CategoryNavigationBar
+File: /home/ctp/Github/shuk-sham/components/browse/CategoryNavigationBar.tsx
+Props: 0
+Contexts Used: 0"><b>CategoryNavigationBar</b>
+(Props: 0)</div>"]:::component
+  productcardwrapper["<div title="Component: ProductCardWrapper
+File: /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx
+Props: 2
+Contexts Used: 0"><b>ProductCardWrapper</b>
+(Props: 2)</div>"]:::component
+  productsection["<div title="Component: ProductSection
+File: /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx
+Props: 2
+Contexts Used: 0"><b>ProductSection</b>
+(Props: 2)</div>"]:::component
+    end
+    subgraph debug_components["debug"]
+  dealsdebugpanel["<div title="Component: DealsDebugPanel
+File: /home/ctp/Github/shuk-sham/components/debug/DealsDebugPanel.tsx
+Props: 0
+Contexts Used: 0"><b>DealsDebugPanel</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph dev_components["dev"]
+  devtools["<div title="Component: DevTools
+File: /home/ctp/Github/shuk-sham/components/dev/DevTools.tsx
+Props: 0
+Contexts Used: 0"><b>DevTools</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph shopping_cart_components["shopping-cart"]
+  addressmodal["<div title="Component: AddressModal
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/AddressModal.tsx
+Props: 3
+Contexts Used: 0"><b>AddressModal</b>
+(Props: 3)</div>"]:::component
+  cartbutton["<div title="Component: CartButton
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx
+Props: 0
+Contexts Used: 0"><b>CartButton</b>
+(Props: 0)</div>"]:::component
+  cartcheck["<div title="Component: CartCheck
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx
+Props: 0
+Contexts Used: 0"><b>CartCheck</b>
+(Props: 0)</div>"]:::component
+  cartstatepersistencehandler["<div title="Component: CartStatePersistenceHandler
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartStatePersistenceHandler.tsx
+Props: 0
+Contexts Used: 0"><b>CartStatePersistenceHandler</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph browse_components["browse"]
+    end
+    subgraph order_confirmation_components["order-confirmation"]
+    end
+    subgraph user_dashboard_components["user-dashboard"]
+    end
+    subgraph cart_check_components["cart-check"]
+    end
+    subgraph _id__components["[id]"]
+    end
+  end
+
+  subgraph Contexts
+  unnamedcontext["<div title="Context: UnnamedContext
+Type: undefined
+Created in: /home/ctp/Github/shuk-sham/contexts/AuthContext.tsx, /home/ctp/Github/shuk-sham/contexts/CartContext.tsx, /home/ctp/Github/shuk-sham/contexts/DataContext.tsx, /home/ctp/Github/shuk-sham/contexts/DealsContext.tsx
+Consumed by: "><b>Context:</b> UnnamedContext
+(0 consumers)
+Initial: undefined</div>"]:::context
+  end
+
+  subgraph SharedProps["Shared Props"]
+  prop_error["<div title="Prop: Error
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx, /home/ctp/Github/shuk-sham/components/actions/Error.tsx"><b>Prop:</b> Error
+(Used 2×)
+(DataContext, Error)</div>"]:::multiConsumer
+  prop_image["<div title="Prop: Image
+Consumers: 13
+Used in: /home/ctp/Github/shuk-sham/components/CategorySelectionMain.tsx, /home/ctp/Github/shuk-sham/components/HeaderSearch.tsx, /home/ctp/Github/shuk-sham/components/Hero.tsx, /home/ctp/Github/shuk-sham/components/ProductBadges.tsx, /home/ctp/Github/shuk-sham/components/ProductCard.tsx, /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx, /home/ctp/Github/shuk-sham/components/actions/SearchResults.tsx, /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> Image
+(Used 13×)
+(CategorySelectionMain, HeaderSearch, Hero, ...)</div>"]:::multiConsumer
+  prop_conditionalhero["<div title="Prop: ConditionalHero
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx, /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx"><b>Prop:</b> ConditionalHero
+(Used 2×)
+(ConditionalHero, layout)</div>"]:::multiConsumer
+  prop_hero["<div title="Prop: Hero
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx, /home/ctp/Github/shuk-sham/components/Hero.tsx"><b>Prop:</b> Hero
+(Used 2×)
+(ConditionalHero, Hero)</div>"]:::multiConsumer
+  prop_chevronleft["<div title="Prop: ChevronLeft
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"><b>Prop:</b> ChevronLeft
+(Used 3×)
+(Header, ProductsListMain, Menu)</div>"]:::multiConsumer
+  prop_productsearchmanager["<div title="Prop: ProductSearchManager
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx"><b>Prop:</b> ProductSearchManager
+(Used 2×)
+(Header, ProductSearchManager)</div>"]:::multiConsumer
+  prop_menu["<div title="Prop: Menu
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"><b>Prop:</b> Menu
+(Used 2×)
+(Header, Menu)</div>"]:::multiConsumer
+  prop_link["<div title="Prop: Link
+Consumers: 7
+Used in: /home/ctp/Github/shuk-sham/components/Hero.tsx, /home/ctp/Github/shuk-sham/components/ProductBreadcrumb.tsx, /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx, /home/ctp/Github/shuk-sham/app/[locale]/order-confirmation/page.tsx"><b>Prop:</b> Link
+(Used 7×)
+(Hero, ProductBreadcrumb, ShoppingCart, ...)</div>"]:::multiConsumer
+  prop_saleribbon["<div title="Prop: SaleRibbon
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductCard.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx"><b>Prop:</b> SaleRibbon
+(Used 2×)
+(ProductCard, SingleProductView)</div>"]:::multiConsumer
+  prop_productpagecontent["<div title="Prop: ProductPageContent
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductPageContent.tsx, /home/ctp/Github/shuk-sham/app/[locale]/product/[id]/page.tsx"><b>Prop:</b> ProductPageContent
+(Used 2×)
+(ProductPageContent, page)</div>"]:::multiConsumer
+  prop_productquickview["<div title="Prop: ProductQuickView
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx"><b>Prop:</b> ProductQuickView
+(Used 3×)
+(ProductQuickView, ProductsListMain, BrowseViewMain)</div>"]:::multiConsumer
+  prop_productbadges["<div title="Prop: ProductBadges
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx"><b>Prop:</b> ProductBadges
+(Used 2×)
+(ProductQuickView, SingleProductView)</div>"]:::multiConsumer
+  prop_productlist["<div title="Prop: ProductList
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/app/[locale]/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/cart-check/page.tsx"><b>Prop:</b> ProductList
+(Used 3×)
+(ProductsListMain, page, page)</div>"]:::multiConsumer
+  prop_productcard["<div title="Prop: ProductCard
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx"><b>Prop:</b> ProductCard
+(Used 2×)
+(ProductsListMain, ProductCardWrapper)</div>"]:::multiConsumer
+  prop_swipetoaction["<div title="Prop: SwipeToAction
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/actions/ConfirmationModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> SwipeToAction
+(Used 4×)
+(ShoppingCart, ConfirmationModal, CartButton, ...)</div>"]:::multiConsumer
+  prop_sharemodal["<div title="Prop: ShareModal
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/SingleProductView.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/actions/ShareModal.tsx"><b>Prop:</b> ShareModal
+(Used 3×)
+(SingleProductView, Menu, ShareModal)</div>"]:::multiConsumer
+  prop_generatemetadata["<div title="Prop: generateMetadata
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx, /home/ctp/Github/shuk-sham/app/[locale]/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/browse/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/product/[id]/page.tsx"><b>Prop:</b> generateMetadata
+(Used 4×)
+(layout, page, page, ...)</div>"]:::multiConsumer
+  prop_helpmodal["<div title="Prop: HelpModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/actions/HelpModal.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"><b>Prop:</b> HelpModal
+(Used 2×)
+(HelpModal, Menu)</div>"]:::multiConsumer
+  prop_addressmodal["<div title="Prop: AddressModal
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/AddressModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> AddressModal
+(Used 3×)
+(Menu, AddressModal, CartCheck)</div>"]:::multiConsumer
+  prop_userauthmodal["<div title="Prop: UserAuthModal
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/auth/AuthButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> UserAuthModal
+(Used 4×)
+(Menu, AuthButton, CartButton, ...)</div>"]:::multiConsumer
+  prop_shineeffect["<div title="Prop: ShineEffect
+Consumers: 1
+Used in: /home/ctp/Github/shuk-sham/components/actions/SwipeToAction.tsx"><b>Prop:</b> ShineEffect
+(Used 1×)
+(SwipeToAction)</div>"]:::multiConsumer
+  prop_notemodal["<div title="Prop: NoteModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/actions/noteModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> NoteModal
+(Used 2×)
+(noteModal, CartCheck)</div>"]:::multiConsumer
+  prop_ricloseline["<div title="Prop: RiCloseLine
+Consumers: 1
+Used in: /home/ctp/Github/shuk-sham/components/auth/UserAuthModal.tsx"><b>Prop:</b> RiCloseLine
+(Used 1×)
+(UserAuthModal)</div>"]:::multiConsumer
+  prop_checkout["<div title="Prop: Checkout
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx"><b>Prop:</b> Checkout
+(Used 2×)
+(Checkout, CheckoutModal)</div>"]:::multiConsumer
+  prop_checkoutmodal["<div title="Prop: CheckoutModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx"><b>Prop:</b> CheckoutModal
+(Used 2×)
+(CheckoutModal, CartButton)</div>"]:::multiConsumer
+  prop_categorynavigation["<div title="Prop: CategoryNavigation
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx, /home/ctp/Github/shuk-sham/components/browse/CategoryNavigationBar.tsx"><b>Prop:</b> CategoryNavigation
+(Used 2×)
+(BrowseViewMain, CategoryNavigationBar)</div>"]:::multiConsumer
+  prop_productsection["<div title="Prop: ProductSection
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx"><b>Prop:</b> ProductSection
+(Used 2×)
+(BrowseViewMain, ProductSection)</div>"]:::multiConsumer
+  prop_productcardwrapper["<div title="Prop: ProductCardWrapper
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx"><b>Prop:</b> ProductCardWrapper
+(Used 2×)
+(ProductCardWrapper, ProductSection)</div>"]:::multiConsumer
+  prop_formatcacheage["<div title="Prop: formatCacheAge
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/api/index.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"><b>Prop:</b> formatCacheAge
+(Used 3×)
+(formatting, index, index)</div>"]:::multiConsumer
+  prop_formatcachetime["<div title="Prop: formatCacheTime
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"><b>Prop:</b> formatCacheTime
+(Used 2×)
+(formatting, index)</div>"]:::multiConsumer
+  prop_formathumantime["<div title="Prop: formatHumanTime
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"><b>Prop:</b> formatHumanTime
+(Used 2×)
+(formatting, index)</div>"]:::multiConsumer
+  prop_get["<div title="Prop: GET
+Consumers: 9
+Used in: /home/ctp/Github/shuk-sham/app/api/order/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/products/route.ts, /home/ctp/Github/shuk-sham/app/api/order/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/order/customer/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/category/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/products/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/me/route.ts, /home/ctp/Github/shuk-sham/app/api/order/customer/[id]/route.ts"><b>Prop:</b> GET
+(Used 9×)
+(route, route, route, ...)</div>"]:::multiConsumer
+  prop_post["<div title="Prop: POST
+Consumers: 6
+Used in: /home/ctp/Github/shuk-sham/app/api/order/route.ts, /home/ctp/Github/shuk-sham/app/api/monitoring/metrics/route.ts, /home/ctp/Github/shuk-sham/app/api/users/route.ts, /home/ctp/Github/shuk-sham/app/api/users/logout/route.ts, /home/ctp/Github/shuk-sham/app/api/users/send-otp/route.ts, /home/ctp/Github/shuk-sham/app/api/users/verify-otp/route.ts"><b>Prop:</b> POST
+(Used 6×)
+(route, route, route, ...)</div>"]:::multiConsumer
+  prop_put["<div title="Prop: PUT
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/app/api/order/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/route.ts, /home/ctp/Github/shuk-sham/app/api/users/[id]/route.ts"><b>Prop:</b> PUT
+(Used 3×)
+(route, route, route)</div>"]:::multiConsumer
+  end
+
+  subgraph ComponentProps["Component Props"]
+    subgraph parsecacheheaders_props["parseCacheHeaders Props"]
+  parsecacheheaders_prop_headers["<div title="Prop: headers in parseCacheHeaders
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"><b>headers</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph formattime_props["formatTime Props"]
+  formattime_prop_ms["<div title="Prop: ms in formatTime
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"><b>ms</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph fetchendpoint_props["fetchEndpoint Props"]
+  fetchendpoint_prop_url["<div title="Prop: url in fetchEndpoint
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"><b>url</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph dataprovider_props["DataProvider Props"]
+  dataprovider_prop_destructured["<div title="Prop: destructured in DataProvider
+Type: undefined
+File: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx"><b>destructured</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph conditionalhero_props["ConditionalHero Props"]
+  conditionalhero_prop_destructured["<div title="Prop: destructured in ConditionalHero
+Type: undefined
+File: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx"><b>destructured</b>
+Type: undefined</div>"]:::prop
+    end
+    more_components["...and 70 more components"]
+  end
+
+  %% Import relationships
+  middleware --> middleware
+  routing --> middleware
+  routing --> layout
+  routing --> page
+  routing --> request
+  routing --> routing
+  next --> next_config
+  next --> layout
+  next --> page
+  plugin --> next_config
+  tailwindcss --> tailwind_config
+  useuser --> authcontext
+  useuser --> menu
+  useuser --> checkout
+  useuser --> cartbutton
+  useuser --> cartcheck
+  logger --> authcontext
+  logger --> datacontext
+  logger --> backgroundfetcher
+  logger --> userdashboard
+  logger --> layout
+  logger --> providers
+  logger --> createentityhook
+  logger --> useproduct
+  logger --> useuser
+  logger --> cache_diagnostic
+  logger --> route
+  logger --> fetchers
+  logger --> user_api
+  logger --> wp_api
+  logger --> redis
+  logger --> wp_cache
+  logger --> cache_metrics
+  global --> cartcontext
+  global --> datacontext
+  global --> backgroundfetcher
+  global --> conditionalhero
+  global --> headersearch
+  global --> hero
+  global --> productbadges
+  global --> productcard
+  global --> productquickview
+  global --> productslistmain
+  global --> saleribbon
+  global --> singleproductview
+  global --> siteconfig
+  global --> confirmationmodal
+  global --> emptycartnotification
+  global --> productsearchmanager
+  global --> searchresults
+  global --> shineeffect
+  global --> swipetoaction
+  global --> notemodal
+  global --> userauthmodal
+  global --> browseviewmain
+  global --> categorynavigationbar
+  global --> productcardwrapper
+  global --> productsection
+  global --> createentityhook
+  global --> usecategories
+  global --> useorders
+  global --> useproduct
+  global --> useproducts
+  global --> useuser
+  global --> cartitem
+  global --> auth
+  global --> ui
+  global --> fetchers
+  global --> index
+  global --> user_api
+  global --> wp_api
+  global --> wp_cache
+  global --> page
+  global --> route
+  hooks --> cartcontext
+  hooks --> datacontext
+  hooks --> browseviewmain
+  confirmationmodal --> cartcontext
+  emptycartnotification --> cartcontext
+  navigation --> cartcontext
+  navigation --> datacontext
+  navigation --> backgroundfetcher
+  navigation --> categoryselectionmain
+  navigation --> conditionalhero
+  navigation --> header
+  navigation --> headersearch
+  navigation --> hero
+  navigation --> productbadges
+  navigation --> productbreadcrumb
+  navigation --> productcard
+  navigation --> productquickview
+  navigation --> productslistmain
+  navigation --> saleribbon
+  navigation --> shoppingcart
+  navigation --> singleproductview
+  navigation --> userdashboard
+  navigation --> layout
+  navigation --> not_found
+  navigation --> orderhistory
+  navigation --> personalinfo
+  navigation --> confirmationmodal
+  navigation --> menu
+  navigation --> productsearchmanager
+  navigation --> swipetoaction
+  navigation --> userauthmodal
+  navigation --> checkout
+  navigation --> checkoutmodal
+  navigation --> browseviewmain
+  navigation --> categorynavigationbar
+  navigation --> cartbutton
+  navigation --> cartcheck
+  navigation --> cartstatepersistencehandler
+  navigation --> emptycartnotification
+  navigation --> page
+  navigation --> routing
+  dealscontext --> cartcontext
+  dealscontext --> providers
+  dealscontext --> dealsdebugpanel
+  dealscontext --> usedealsdebug
+  deal --> cartcontext
+  deal --> dealscontext
+  deal --> dealsdebugpanel
+  deal --> usecartdiscounts
+  deal --> cartitem
+  deal --> index
+  loading --> datacontext
+  loading --> singleproductview
+  loading --> page
+  error --> datacontext
+  swr --> backgroundfetcher
+  swr --> providers
+  swr --> swr
+  swr --> createentityhook
+  swr --> useorders
+  swr --> useproduct
+  swr --> useuser
+  swr --> swr_config
+  fetchers --> backgroundfetcher
+  fetchers --> createentityhook
+  fetchers --> usecategories
+  fetchers --> useorders
+  fetchers --> useproduct
+  fetchers --> useproducts
+  fetchers --> useuser
+  providers --> backgroundfetcher
+  providers --> browseviewwrapper
+  providers --> layout
+  constants --> backgroundfetcher
+  constants --> providers
+  constants --> createentityhook
+  constants --> useorders
+  constants --> useproduct
+  constants --> useuser
+  constants --> index
+  constants --> swr_config
+  constants --> wp_cache
+  constants --> route
+  browseviewmain --> browseviewwrapper
+  image --> categoryselectionmain
+  image --> headersearch
+  image --> hero
+  image --> productbadges
+  image --> productcard
+  image --> productquickview
+  image --> shoppingcart
+  image --> singleproductview
+  image --> menu
+  image --> productsearchmanager
+  image --> searchresults
+  image --> checkout
+  image --> cartcheck
+  datacontext --> categoryselectionmain
+  datacontext --> productslistmain
+  datacontext --> layout
+  datacontext --> productsearchmanager
+  datacontext --> devtools
+  hero --> conditionalhero
+  lucide_react --> header
+  lucide_react --> productslistmain
+  lucide_react --> menu
+  menu --> header
+  productsearchmanager --> header
+  next_intl --> headersearch
+  next_intl --> singleproductview
+  next_intl --> userdashboard
+  next_intl --> layout
+  next_intl --> page
+  next_intl --> orderhistory
+  next_intl --> personalinfo
+  next_intl --> emptycartnotification
+  index --> headersearch
+  index --> productquickview
+  index --> productslistmain
+  index --> singleproductview
+  index --> searchresults
+  index --> productcardwrapper
+  index --> route
+  index --> wp_cache
+  link --> hero
+  link --> productbreadcrumb
+  link --> shoppingcart
+  link --> menu
+  link --> checkout
+  link --> cartcheck
+  link --> page
+  cartcontext --> productcard
+  cartcontext --> productquickview
+  cartcontext --> shoppingcart
+  cartcontext --> singleproductview
+  cartcontext --> layout
+  cartcontext --> orderhistory
+  cartcontext --> searchresults
+  cartcontext --> checkout
+  cartcontext --> dealsdebugpanel
+  cartcontext --> cartbutton
+  cartcontext --> cartcheck
+  cartcontext --> cartstatepersistencehandler
+  saleribbon --> productcard
+  saleribbon --> singleproductview
+  he --> productcard
+  he --> swipetoaction
+  he --> cartbutton
+  ar --> productcard
+  ar --> swipetoaction
+  ar --> cartbutton
+  singleproductview --> productpagecontent
+  productbadges --> productquickview
+  productbadges --> singleproductview
+  productcard --> productslistmain
+  productcard --> productcardwrapper
+  productquickview --> productslistmain
+  productquickview --> browseviewmain
+  usedragscroll --> productslistmain
+  authcontext --> productslistmain
+  authcontext --> userdashboard
+  authcontext --> layout
+  authcontext --> authbutton
+  useorders --> productslistmain
+  useorders --> orderhistory
+  swipetoaction --> shoppingcart
+  swipetoaction --> confirmationmodal
+  swipetoaction --> cartbutton
+  swipetoaction --> cartcheck
+  sharemodal --> singleproductview
+  sharemodal --> menu
+  useproduct --> singleproductview
+  productbreadcrumb --> singleproductview
+  userprofile --> userdashboard
+  server --> layout
+  server --> page
+  server --> route
+  server --> auth
+  server --> index
+  server --> request
+  globals --> layout
+  cartbutton --> layout
+  heromessages --> layout
+  cartstatepersistencehandler --> layout
+  script --> layout
+  siteconfig --> layout
+  siteconfig --> page
+  header --> layout
+  conditionalhero --> layout
+  devtools --> layout
+  dealsdebugpanel --> layout
+  categoryselectionmain --> page
+  productslistmain --> page
+  backgroundfetcher --> page
+  checkout --> orderhistory
+  checkout --> checkout
+  checkout --> checkoutmodal
+  user --> personalinfo
+  user --> addressmodal
+  addressmodal --> menu
+  addressmodal --> cartcheck
+  helpmodal --> menu
+  userauthmodal --> menu
+  userauthmodal --> authbutton
+  userauthmodal --> cartbutton
+  userauthmodal --> cartcheck
+  useflasheffect --> menu
+  useflasheffect --> searchresults
+  searchresults --> productsearchmanager
+  shineeffect --> swipetoaction
+  ri --> authbutton
+  ri --> userauthmodal
+  checkout --> checkoutmodal
+  categorynavigationbar --> browseviewmain
+  productsection --> browseviewmain
+  productcardwrapper --> productsection
+  react_intersection_observer --> productsection
+  checkoutmodal --> cartbutton
+  user_api --> cartbutton
+  notemodal --> cartcheck
+  cache --> swr
+  cache --> index
+  cache --> redis
+  cartitem --> usecartdiscounts
+  createentityhook --> usecategories
+  createentityhook --> useproducts
+  cache_metrics --> cache_diagnostic
+  cache_metrics --> route
+  product --> index
+  browseviewwrapper --> page
+  orderconfirmation --> page
+  userdashboard --> page
+  redis --> route
+  redis --> wp_cache
+  os --> route
+  wp_auth --> route
+  wp_auth --> wp_api
+  cartcheck --> page
+  buffer --> wp_auth
+  ioredis --> redis
+  memory_cache --> redis
+  cache_diagnostic --> redis
+  cache_diagnostic --> route
+  wp_api --> wp_cache
+  route --> wp_cache
+  perf_hooks --> cache_metrics
+  productpagecontent --> page
+  wp_cache --> page
+  wp_cache --> route
+  messages --> orderconfirmation
+  deals --> route
+  auth --> route
+  cache_keys --> route
+  uuid --> route
+  %% Context relationships
+  authcontext -->|creates| unnamedcontext
+  cartcontext -->|creates| unnamedcontext
+  datacontext -->|creates| unnamedcontext
+  dealscontext -->|creates| unnamedcontext
+  %% Props relationships
+  parsecacheheaders -->|has props| parsecacheheaders_props
+  formattime -->|has props| formattime_props
+  fetchendpoint -->|has props| fetchendpoint_props
+  confirmationmodal -->|has props| confirmationmodal_props
+  emptycartnotification -->|has props| emptycartnotification_props
+  dataprovider -->|has props| dataprovider_props
+  error -->|has props| error_props
+  image -->|has props| image_props
+  conditionalhero -->|has props| conditionalhero_props
+  hero -->|has props| hero_props
+  chevronleft -->|has props| chevronleft_props
+  productsearchmanager -->|has props| productsearchmanager_props
+  menu -->|has props| menu_props
+  link -->|has props| link_props
+  getmessages -->|has props| getmessages_props
+  saleribbon -->|has props| saleribbon_props
+  productpagecontent -->|has props| productpagecontent_props
+  singleproductview -->|has props| singleproductview_props
+  productquickview -->|has props| productquickview_props
+  productbadges -->|has props| productbadges_props
+  productlist -->|has props| productlist_props
+  getrandomproducts -->|has props| getrandomproducts_props
+  productcard -->|has props| productcard_props
+  chevronright -->|has props| chevronright_props
+  swipetoaction -->|has props| swipetoaction_props
+  productbreadcrumb -->|has props| productbreadcrumb_props
+  sharemodal -->|has props| sharemodal_props
+  personalinfo -->|has props| personalinfo_props
+  orderhistory -->|has props| orderhistory_props
+  generatemetadata -->|has props| generatemetadata_props
+  localelayout -->|has props| localelayout_props
+  script -->|has props| script_props
+  nextintlclientprovider -->|has props| nextintlclientprovider_props
+  swrprovider -->|has props| swrprovider_props
+  swrconfig -->|has props| swrconfig_props
+  providers -->|has props| providers_props
+  helpmodal -->|has props| helpmodal_props
+  addressmodal -->|has props| addressmodal_props
+  userauthmodal -->|has props| userauthmodal_props
+  searchresults -->|has props| searchresults_props
+  shineeffect -->|has props| shineeffect_props
+  notemodal -->|has props| notemodal_props
+  riuserline -->|has props| riuserline_props
+  ricloseline -->|has props| ricloseline_props
+  riuser3line -->|has props| riuser3line_props
+  riarrowleftsline -->|has props| riarrowleftsline_props
+  rilogoutboxrline -->|has props| rilogoutboxrline_props
+  checkout -->|has props| checkout_props
+  checkoutmodal -->|has props| checkoutmodal_props
+  categorynavigation -->|has props| categorynavigation_props
+  productsection -->|has props| productsection_props
+  productcardwrapper -->|has props| productcardwrapper_props
+  createentityhook -->|has props| createentityhook_props
+  usedragscroll -->|has props| usedragscroll_props
+  useflasheffect -->|has props| useflasheffect_props
+  useproduct -->|has props| useproduct_props
+  logcache -->|has props| logcache_props
+  getlayersymbol -->|has props| getlayersymbol_props
+  getactiontext -->|has props| getactiontext_props
+  formatcacheage -->|has props| formatcacheage_props
+  formatcachetime -->|has props| formatcachetime_props
+  formathumantime -->|has props| formathumantime_props
+  formatprice -->|has props| formatprice_props
+  suspense -->|has props| suspense_props
+  get -->|has props| get_props
+  post -->|has props| post_props
+  apifetcher -->|has props| apifetcher_props
+  userfetcher -->|has props| userfetcher_props
+  productsfetcher -->|has props| productsfetcher_props
+  productfetcher -->|has props| productfetcher_props
+  categoriesfetcher -->|has props| categoriesfetcher_props
+  ordersfetcher -->|has props| ordersfetcher_props
+  iscachevalid -->|has props| iscachevalid_props
+  fetchcurrentuser -->|has props| fetchcurrentuser_props
+  wpapifetch -->|has props| wpapifetch_props
+  isauthenticated -->|has props| isauthenticated_props
+  setauthheaders -->|has props| setauthheaders_props
+  clearauthcookies -->|has props| clearauthcookies_props
+  safecacheage -->|has props| safecacheage_props
+  calculatecachepercent -->|has props| calculatecachepercent_props
+  getcachediagnostics -->|has props| getcachediagnostics_props
+  addcacheheaders -->|has props| addcacheheaders_props
+  adddevelopmentcacheheaders -->|has props| adddevelopmentcacheheaders_props
+  getfromcache -->|has props| getfromcache_props
+  setincache -->|has props| setincache_props
+  deletefromcache -->|has props| deletefromcache_props
+  getcategorycachekey -->|has props| getcategorycachekey_props
+  getproductcachekey -->|has props| getproductcachekey_props
+  getusercachekey -->|has props| getusercachekey_props
+  transformcategories -->|has props| transformcategories_props
+  getcategories -->|has props| getcategories_props
+  getproducts -->|has props| getproducts_props
+  paginateproducts -->|has props| paginateproducts_props
+  pretransformproducts -->|has props| pretransformproducts_props
+  setmetricsenabled -->|has props| setmetricsenabled_props
+  trackcacheoperation -->|has props| trackcacheoperation_props
+  maptoobject -->|has props| maptoobject_props
+  withcachemetrics -->|has props| withcachemetrics_props
+  page -->|has props| page_props
+  put -->|has props| put_props
+  delete -->|has props| delete_props
+  prop_error -.->|used by| datacontext
+  prop_error -.->|used by| error
+  prop_image -.->|used by| categoryselectionmain
+  prop_image -.->|used by| headersearch
+  prop_image -.->|used by| hero
+  prop_conditionalhero -.->|used by| conditionalhero
+  prop_conditionalhero -.->|used by| layout
+  prop_hero -.->|used by| conditionalhero
+  prop_hero -.->|used by| hero
+  prop_chevronleft -.->|used by| header
+  prop_chevronleft -.->|used by| productslistmain
+  prop_chevronleft -.->|used by| menu
+  prop_productsearchmanager -.->|used by| header
+  prop_productsearchmanager -.->|used by| productsearchmanager
+  prop_menu -.->|used by| header
+  prop_menu -.->|used by| menu
+  prop_link -.->|used by| hero
+  prop_link -.->|used by| productbreadcrumb
+  prop_link -.->|used by| shoppingcart
+  prop_saleribbon -.->|used by| productcard
+  prop_saleribbon -.->|used by| singleproductview
+  prop_productpagecontent -.->|used by| productpagecontent
+  prop_productpagecontent -.->|used by| page
+  prop_productquickview -.->|used by| productquickview
+  prop_productquickview -.->|used by| productslistmain
+  prop_productquickview -.->|used by| browseviewmain
+  prop_productbadges -.->|used by| productquickview
+  prop_productbadges -.->|used by| singleproductview
+  prop_productlist -.->|used by| productslistmain
+  prop_productlist -.->|used by| page
+  prop_productlist -.->|used by| page
+  prop_productcard -.->|used by| productslistmain
+  prop_productcard -.->|used by| productcardwrapper
+  prop_swipetoaction -.->|used by| shoppingcart
+  prop_swipetoaction -.->|used by| confirmationmodal
+  prop_swipetoaction -.->|used by| cartbutton
+  prop_sharemodal -.->|used by| singleproductview
+  prop_sharemodal -.->|used by| menu
+  prop_sharemodal -.->|used by| sharemodal
+  prop_generatemetadata -.->|used by| layout
+  prop_generatemetadata -.->|used by| page
+  prop_generatemetadata -.->|used by| page
+  prop_helpmodal -.->|used by| helpmodal
+  prop_helpmodal -.->|used by| menu
+  prop_addressmodal -.->|used by| menu
+  prop_addressmodal -.->|used by| addressmodal
+  prop_addressmodal -.->|used by| cartcheck
+  prop_userauthmodal -.->|used by| menu
+  prop_userauthmodal -.->|used by| authbutton
+  prop_userauthmodal -.->|used by| cartbutton
+  prop_shineeffect -.->|used by| swipetoaction
+  prop_notemodal -.->|used by| notemodal
+  prop_notemodal -.->|used by| cartcheck
+  prop_ricloseline -.->|used by| userauthmodal
+  prop_checkout -.->|used by| checkout
+  prop_checkout -.->|used by| checkoutmodal
+  prop_checkoutmodal -.->|used by| checkoutmodal
+  prop_checkoutmodal -.->|used by| cartbutton
+  prop_categorynavigation -.->|used by| browseviewmain
+  prop_categorynavigation -.->|used by| categorynavigationbar
+  prop_productsection -.->|used by| browseviewmain
+  prop_productsection -.->|used by| productsection
+  prop_productcardwrapper -.->|used by| productcardwrapper
+  prop_productcardwrapper -.->|used by| productsection
+  prop_formatcacheage -.->|used by| formatting
+  prop_formatcacheage -.->|used by| index
+  prop_formatcacheage -.->|used by| index
+  prop_formatcachetime -.->|used by| formatting
+  prop_formatcachetime -.->|used by| index
+  prop_formathumantime -.->|used by| formatting
+  prop_formathumantime -.->|used by| index
+  prop_get -.->|used by| route
+  prop_get -.->|used by| route
+  prop_get -.->|used by| route
+  prop_post -.->|used by| route
+  prop_post -.->|used by| route
+  prop_post -.->|used by| route
+  prop_put -.->|used by| route
+  prop_put -.->|used by| route
+  prop_put -.->|used by| route
+  %% Object relationships
+  %% Array relationships
+  %% Map operations
+  items -->|mapped in| cartcontext
+  prevcart -->|mapped in| cartcontext
+  prev -->|mapped in| cartcontext
+  cartitems -->|mapped in| cartcontext
+  cartitems -->|mapped in| shoppingcart
+  cartitems -->|mapped in| checkout
+  dealsarray -->|mapped in| dealscontext
+  filteredcategories -->|mapped in| categoryselectionmain
+  dietaryflags -->|mapped in| headersearch
+  dietaryflags -->|mapped in| productbadges
+  searchresults -->|mapped in| headersearch
+  displayproducts -->|mapped in| productslistmain
+  containslist -->|mapped in| singleproductview
+  maycontainlist -->|mapped in| singleproductview
+  orders -->|mapped in| orderhistory
+  results -->|mapped in| searchresults
+  sortedmaincategories -->|mapped in| categorynavigationbar
+  visibleproducts -->|mapped in| productsection
+  itemswiththisdeal -->|mapped in| dealsdebugpanel
+  deals -->|mapped in| dealsdebugpanel
+  alldealstoshow -->|mapped in| dealsdebugpanel
+  allproducts -->|mapped in| wp_api
+  existinglineitems -->|mapped in| route
+  line_items -->|mapped in| route
+`;
+    
+    // Setup PNG export
+    document.getElementById('export-png').addEventListener('click', () => {
+      const svg = document.querySelector('#graph svg');
+      if (svg) {
+        // Create a canvas element to convert SVG to PNG
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Create an image from the SVG
+        const image = new Image();
+        const svgData = new XMLSerializer().serializeToString(svg);
+        const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+        const url = URL.createObjectURL(svgBlob);
+        
+        image.onload = () => {
+          // Set canvas dimensions to match the SVG
+          canvas.width = image.width;
+          canvas.height = image.height;
+          
+          // Draw the image to the canvas
+          ctx.drawImage(image, 0, 0);
+          
+          // Convert to PNG and trigger download
+          const pngUrl = canvas.toDataURL('image/png');
+          const a = document.createElement('a');
+          a.href = pngUrl;
+          a.download = 'dependency-map.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        };
+        
+        image.src = url;
+      }
+    });
+    
+    // Setup fullscreen
+    document.getElementById('fullscreen').addEventListener('click', () => {
+      const graphContainer = document.getElementById('flowchart-tab');
+      if (graphContainer.requestFullscreen) {
+        graphContainer.requestFullscreen();
+      } else if (graphContainer.mozRequestFullScreen) {
+        graphContainer.mozRequestFullScreen();
+      } else if (graphContainer.webkitRequestFullscreen) {
+        graphContainer.webkitRequestFullscreen();
+      } else if (graphContainer.msRequestFullscreen) {
+        graphContainer.msRequestFullscreen();
+      }
+    });
+
+    // Hide fallback content if diagram loaded successfully
+    function hideFallback() {
+      if (document.querySelector('#graph svg')) {
+        const fallbackSection = document.getElementById('fallback-section');
+        if (fallbackSection) {
+          fallbackSection.style.display = 'none';
+        }
+        document.querySelectorAll('.standalone-view').forEach(el => {
+          el.style.display = 'none';
+        });
+      }
+    }
+    
+    // Check if Mermaid rendered successfully
+    setTimeout(hideFallback, 1500);
+    
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .controls button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      background: #4a6ee0;
+      color: white;
+      border: none;
+      border-radius: 3px;
+    }
+    
+    #graph {
+      overflow: auto;
+      margin-top: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      min-height: 400px;
+    }
+    
+    #graph svg {
+      transform-origin: top left;
+      transition: transform 0.2s;
+      width: 100%;
+    }
+    
+    .mermaid {
+      font-size: 16px;
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .legend {
+      margin: 10px 0;
+      padding: 10px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Fallback display styles */
+    .fallback-warning {
+      padding: 15px;
+      margin: 20px 0;
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      color: #856404;
+    }
+    
+    .fallback-container {
+      margin-top: 25px;
+    }
+    
+    .static-diagram {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  
+    #graph svg {
+      width: auto !important;
+      height: auto !important;
+      max-width: 100%;
+    }
+    
+    .svg-pan-zoom-control {
+      display: block;
+    }
+    
+    /* Tabs for switching between PNG and text views */
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      margin-right: 5px;
+      border-radius: 5px 5px 0 0;
+      color: #333;
+    }
+    
+    .tab.active {
+      background: white;
+      font-weight: bold;
+    }
+    
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 0 5px 5px 5px;
+      background: white;
+      color: #333;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    #text-flow {
+      font-family: monospace;
+      white-space: pre;
+      overflow-x: auto;
+      line-height: 1.5;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 5px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    
+    .flowchart-container {
+      position: relative;
+      margin-top: 20px;
+    }
+    
+    /* Styling for the PNG export controls */
+    .export-controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .export-controls button {
+      padding: 8px 15px;
+      background: #4a6ee0;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    /* Legend styling */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+    }
+    
+    .component-color { background-color: #e1f5fe; border: 1px solid #0288d1; }
+    .context-color { background-color: #fff9c4; border: 1px solid #fbc02d; }
+    .object-color { background-color: #e8f5e9; border: 1px solid #43a047; }
+    .array-color { background-color: #f3e5f5; border: 1px solid #8e24aa; }
+    .map-color { background-color: #ffebee; border: 1px solid #e53935; }
+    .multi-color { background-color: #ede7f6; border: 1px solid #673ab7; border-width: 3px; }
+    
+    /* Fallback display */
+    .fallback-warning {
+      padding: 15px;
+      margin: 20px 0;
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      color: #856404;
+    }
+    
+    .fallback-content {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .standalone-view {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .code-display {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      overflow-x: auto;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Himdell Dependency Map</h1>
+  
+  <div class="legend">
+    <p>This diagram shows the dependencies between files in your project.</p>
+  </div>
+  
+  <!-- Error container -->
+  <div id="error-container" style="color: red; margin-bottom: 10px;"></div>
+  
+  <!-- Fallback content for when JavaScript is restricted -->
+  <div id="fallback-section" class="fallback-warning">
+    <h3>⚠️ Display Issue Detected</h3>
+    <p>If you're seeing this message and no diagram appears above, your browser may be blocking JavaScript for local files.</p>
+    <p><strong>Solutions:</strong></p>
+    <ol>
+      <li><strong>Open with a local server:</strong> Start a local server in this directory with: <code>python3 -m http.server 8000</code> and navigate to <code>http://localhost:8000/dependency-map.html</code></li>
+      <li><strong>Use the text view:</strong> Below is the text representation of the diagram.</li>
+      <li><strong>View the PNG file:</strong> Open the <code>dependency-map.png</code> file in the same directory.</li>
+    </ol>
+  </div>
+  
+  <div class="standalone-view">
+    <h3>Mermaid Diagram Code</h3>
+    <p>You can copy this code and paste it into the <a href="https://mermaid.live" target="_blank">Mermaid Live Editor</a> to view the diagram.</p>
+    <pre class="code-display">%%{init: {"theme": "default", "flowchart": {"htmlLabels": true, "curve": "basis"}}}%%
+flowchart LR
+  %% Style definitions
+  classDef component fill:#e1f5fe,stroke:#0288d1,color:#01579b,stroke-width:2px
+  classDef context fill:#fff9c4,stroke:#fbc02d,color:#f57f17,stroke-width:2px
+  classDef object fill:#e8f5e9,stroke:#43a047,color:#1b5e20,stroke-width:1px
+  classDef array fill:#f3e5f5,stroke:#8e24aa,color:#4a148c,stroke-width:1px
+  classDef map fill:#ffebee,stroke:#e53935,color:#b71c1c,stroke-width:1px
+  classDef multiConsumer fill:#ede7f6,stroke:#673ab7,color:#311b92,stroke-width:3px
+  classDef provider fill:#e8f5e9,stroke:#43a047,color:#1b5e20,stroke-width:2px,stroke-dasharray:5,5
+  classDef hook fill:#bbdefb,stroke:#1976d2,color:#0d47a1,stroke-width:1px
+  classDef prop fill:#e1f5fe,stroke:#0288d1,color:#01579b,stroke-width:1px,stroke-dasharray:3,3
+
+  subgraph Components
+    subgraph contexts_components["contexts"]
+  authcontext["&lt;div title="Component: AuthContext
+File: /home/ctp/Github/shuk-sham/contexts/AuthContext.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;AuthContext&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  cartcontext["&lt;div title="Component: CartContext
+File: /home/ctp/Github/shuk-sham/contexts/CartContext.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;CartContext&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  datacontext["&lt;div title="Component: DataContext
+File: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;DataContext&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  dealscontext["&lt;div title="Component: DealsContext
+File: /home/ctp/Github/shuk-sham/contexts/DealsContext.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;DealsContext&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+    end
+    subgraph components_components["components"]
+  backgroundfetcher["&lt;div title="Component: BackgroundFetcher
+File: /home/ctp/Github/shuk-sham/components/BackgroundFetcher.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;BackgroundFetcher&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  browseviewwrapper["&lt;div title="Component: BrowseViewWrapper
+File: /home/ctp/Github/shuk-sham/components/BrowseViewWrapper.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;BrowseViewWrapper&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  categoryselectionmain["&lt;div title="Component: CategorySelectionMain
+File: /home/ctp/Github/shuk-sham/components/CategorySelectionMain.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;CategorySelectionMain&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  conditionalhero["&lt;div title="Component: ConditionalHero
+File: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ConditionalHero&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  header["&lt;div title="Component: Header
+File: /home/ctp/Github/shuk-sham/components/Header.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;Header&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  headersearch["&lt;div title="Component: HeaderSearch
+File: /home/ctp/Github/shuk-sham/components/HeaderSearch.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;HeaderSearch&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  hero["&lt;div title="Component: Hero
+File: /home/ctp/Github/shuk-sham/components/Hero.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;Hero&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  productbadges["&lt;div title="Component: ProductBadges
+File: /home/ctp/Github/shuk-sham/components/ProductBadges.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ProductBadges&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  productbreadcrumb["&lt;div title="Component: ProductBreadcrumb
+File: /home/ctp/Github/shuk-sham/components/ProductBreadcrumb.tsx
+Props: 1
+Contexts Used: 0"&gt;&lt;b&gt;ProductBreadcrumb&lt;/b&gt;
+(Props: 1)&lt;/div&gt;"]:::component
+  productcard["&lt;div title="Component: ProductCard
+File: /home/ctp/Github/shuk-sham/components/ProductCard.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ProductCard&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  productpagecontent["&lt;div title="Component: ProductPageContent
+File: /home/ctp/Github/shuk-sham/components/ProductPageContent.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ProductPageContent&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  productquickview["&lt;div title="Component: ProductQuickView
+File: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx
+Props: 3
+Contexts Used: 0"&gt;&lt;b&gt;ProductQuickView&lt;/b&gt;
+(Props: 3)&lt;/div&gt;"]:::component
+  productslistmain["&lt;div title="Component: ProductsListMain
+File: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;ProductsListMain&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  saleribbon["&lt;div title="Component: SaleRibbon
+File: /home/ctp/Github/shuk-sham/components/SaleRibbon.tsx
+Props: 3
+Contexts Used: 0"&gt;&lt;b&gt;SaleRibbon&lt;/b&gt;
+(Props: 3)&lt;/div&gt;"]:::component
+  shoppingcart["&lt;div title="Component: ShoppingCart
+File: /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;ShoppingCart&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  singleproductview["&lt;div title="Component: SingleProductView
+File: /home/ctp/Github/shuk-sham/components/SingleProductView.tsx
+Props: 1
+Contexts Used: 0"&gt;&lt;b&gt;SingleProductView&lt;/b&gt;
+(Props: 1)&lt;/div&gt;"]:::component
+  userdashboard["&lt;div title="Component: UserDashboard
+File: /home/ctp/Github/shuk-sham/components/UserDashboard.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;UserDashboard&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+    end
+    subgraph _locale__components["[locale]"]
+  layout["&lt;div title="Component: layout
+File: /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;layout&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  not_found["&lt;div title="Component: not-found
+File: /home/ctp/Github/shuk-sham/app/[locale]/not-found.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;not-found&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  page["&lt;div title="Component: page
+File: /home/ctp/Github/shuk-sham/app/[locale]/page.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;page&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  providers["&lt;div title="Component: providers
+File: /home/ctp/Github/shuk-sham/app/[locale]/providers.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;providers&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+    end
+    subgraph userprofile_components["UserProfile"]
+  orderhistory["&lt;div title="Component: OrderHistory
+File: /home/ctp/Github/shuk-sham/components/UserProfile/OrderHistory.tsx
+Props: 1
+Contexts Used: 0"&gt;&lt;b&gt;OrderHistory&lt;/b&gt;
+(Props: 1)&lt;/div&gt;"]:::component
+  personalinfo["&lt;div title="Component: PersonalInfo
+File: /home/ctp/Github/shuk-sham/components/UserProfile/PersonalInfo.tsx
+Props: 1
+Contexts Used: 0"&gt;&lt;b&gt;PersonalInfo&lt;/b&gt;
+(Props: 1)&lt;/div&gt;"]:::component
+    end
+    subgraph actions_components["actions"]
+  confirmationmodal["&lt;div title="Component: ConfirmationModal
+File: /home/ctp/Github/shuk-sham/components/actions/ConfirmationModal.tsx
+Props: 1
+Contexts Used: 0"&gt;&lt;b&gt;ConfirmationModal&lt;/b&gt;
+(Props: 1)&lt;/div&gt;"]:::component
+  emptycartnotification["&lt;div title="Component: EmptyCartNotification
+File: /home/ctp/Github/shuk-sham/components/actions/EmptyCartNotification.tsx
+Props: 1
+Contexts Used: 0"&gt;&lt;b&gt;EmptyCartNotification&lt;/b&gt;
+(Props: 1)&lt;/div&gt;"]:::component
+  helpmodal["&lt;div title="Component: HelpModal
+File: /home/ctp/Github/shuk-sham/components/actions/HelpModal.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;HelpModal&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  menu["&lt;div title="Component: Menu
+File: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;Menu&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  productsearchmanager["&lt;div title="Component: ProductSearchManager
+File: /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ProductSearchManager&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  searchresults["&lt;div title="Component: SearchResults
+File: /home/ctp/Github/shuk-sham/components/actions/SearchResults.tsx
+Props: 1
+Contexts Used: 0"&gt;&lt;b&gt;SearchResults&lt;/b&gt;
+(Props: 1)&lt;/div&gt;"]:::component
+  sharemodal["&lt;div title="Component: ShareModal
+File: /home/ctp/Github/shuk-sham/components/actions/ShareModal.tsx
+Props: 3
+Contexts Used: 0"&gt;&lt;b&gt;ShareModal&lt;/b&gt;
+(Props: 3)&lt;/div&gt;"]:::component
+  shineeffect["&lt;div title="Component: ShineEffect
+File: /home/ctp/Github/shuk-sham/components/actions/ShineEffect.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ShineEffect&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  swipetoaction["&lt;div title="Component: SwipeToAction
+File: /home/ctp/Github/shuk-sham/components/actions/SwipeToAction.tsx
+Props: 6
+Contexts Used: 0"&gt;&lt;b&gt;SwipeToAction&lt;/b&gt;
+(Props: 6)&lt;/div&gt;"]:::component
+  notemodal["&lt;div title="Component: noteModal
+File: /home/ctp/Github/shuk-sham/components/actions/noteModal.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;noteModal&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+    end
+    subgraph auth_components["auth"]
+  authbutton["&lt;div title="Component: AuthButton
+File: /home/ctp/Github/shuk-sham/components/auth/AuthButton.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;AuthButton&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  userauthmodal["&lt;div title="Component: UserAuthModal
+File: /home/ctp/Github/shuk-sham/components/auth/UserAuthModal.tsx
+Props: 4
+Contexts Used: 0"&gt;&lt;b&gt;UserAuthModal&lt;/b&gt;
+(Props: 4)&lt;/div&gt;"]:::component
+    end
+    subgraph checkout_components["checkout"]
+  checkout["&lt;div title="Component: Checkout
+File: /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;Checkout&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  checkoutmodal["&lt;div title="Component: CheckoutModal
+File: /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;CheckoutModal&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+    end
+    subgraph browse_components["browse"]
+  browseviewmain["&lt;div title="Component: BrowseViewMain
+File: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;BrowseViewMain&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  categorynavigationbar["&lt;div title="Component: CategoryNavigationBar
+File: /home/ctp/Github/shuk-sham/components/browse/CategoryNavigationBar.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;CategoryNavigationBar&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  productcardwrapper["&lt;div title="Component: ProductCardWrapper
+File: /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ProductCardWrapper&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+  productsection["&lt;div title="Component: ProductSection
+File: /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx
+Props: 2
+Contexts Used: 0"&gt;&lt;b&gt;ProductSection&lt;/b&gt;
+(Props: 2)&lt;/div&gt;"]:::component
+    end
+    subgraph debug_components["debug"]
+  dealsdebugpanel["&lt;div title="Component: DealsDebugPanel
+File: /home/ctp/Github/shuk-sham/components/debug/DealsDebugPanel.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;DealsDebugPanel&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+    end
+    subgraph dev_components["dev"]
+  devtools["&lt;div title="Component: DevTools
+File: /home/ctp/Github/shuk-sham/components/dev/DevTools.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;DevTools&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+    end
+    subgraph shopping_cart_components["shopping-cart"]
+  addressmodal["&lt;div title="Component: AddressModal
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/AddressModal.tsx
+Props: 3
+Contexts Used: 0"&gt;&lt;b&gt;AddressModal&lt;/b&gt;
+(Props: 3)&lt;/div&gt;"]:::component
+  cartbutton["&lt;div title="Component: CartButton
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;CartButton&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  cartcheck["&lt;div title="Component: CartCheck
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;CartCheck&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+  cartstatepersistencehandler["&lt;div title="Component: CartStatePersistenceHandler
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartStatePersistenceHandler.tsx
+Props: 0
+Contexts Used: 0"&gt;&lt;b&gt;CartStatePersistenceHandler&lt;/b&gt;
+(Props: 0)&lt;/div&gt;"]:::component
+    end
+    subgraph browse_components["browse"]
+    end
+    subgraph order_confirmation_components["order-confirmation"]
+    end
+    subgraph user_dashboard_components["user-dashboard"]
+    end
+    subgraph cart_check_components["cart-check"]
+    end
+    subgraph _id__components["[id]"]
+    end
+  end
+
+  subgraph Contexts
+  unnamedcontext["&lt;div title="Context: UnnamedContext
+Type: undefined
+Created in: /home/ctp/Github/shuk-sham/contexts/AuthContext.tsx, /home/ctp/Github/shuk-sham/contexts/CartContext.tsx, /home/ctp/Github/shuk-sham/contexts/DataContext.tsx, /home/ctp/Github/shuk-sham/contexts/DealsContext.tsx
+Consumed by: "&gt;&lt;b&gt;Context:&lt;/b&gt; UnnamedContext
+(0 consumers)
+Initial: undefined&lt;/div&gt;"]:::context
+  end
+
+  subgraph SharedProps["Shared Props"]
+  prop_error["&lt;div title="Prop: Error
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx, /home/ctp/Github/shuk-sham/components/actions/Error.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; Error
+(Used 2×)
+(DataContext, Error)&lt;/div&gt;"]:::multiConsumer
+  prop_image["&lt;div title="Prop: Image
+Consumers: 13
+Used in: /home/ctp/Github/shuk-sham/components/CategorySelectionMain.tsx, /home/ctp/Github/shuk-sham/components/HeaderSearch.tsx, /home/ctp/Github/shuk-sham/components/Hero.tsx, /home/ctp/Github/shuk-sham/components/ProductBadges.tsx, /home/ctp/Github/shuk-sham/components/ProductCard.tsx, /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx, /home/ctp/Github/shuk-sham/components/actions/SearchResults.tsx, /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; Image
+(Used 13×)
+(CategorySelectionMain, HeaderSearch, Hero, ...)&lt;/div&gt;"]:::multiConsumer
+  prop_conditionalhero["&lt;div title="Prop: ConditionalHero
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx, /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ConditionalHero
+(Used 2×)
+(ConditionalHero, layout)&lt;/div&gt;"]:::multiConsumer
+  prop_hero["&lt;div title="Prop: Hero
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx, /home/ctp/Github/shuk-sham/components/Hero.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; Hero
+(Used 2×)
+(ConditionalHero, Hero)&lt;/div&gt;"]:::multiConsumer
+  prop_chevronleft["&lt;div title="Prop: ChevronLeft
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ChevronLeft
+(Used 3×)
+(Header, ProductsListMain, Menu)&lt;/div&gt;"]:::multiConsumer
+  prop_productsearchmanager["&lt;div title="Prop: ProductSearchManager
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductSearchManager
+(Used 2×)
+(Header, ProductSearchManager)&lt;/div&gt;"]:::multiConsumer
+  prop_menu["&lt;div title="Prop: Menu
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; Menu
+(Used 2×)
+(Header, Menu)&lt;/div&gt;"]:::multiConsumer
+  prop_link["&lt;div title="Prop: Link
+Consumers: 7
+Used in: /home/ctp/Github/shuk-sham/components/Hero.tsx, /home/ctp/Github/shuk-sham/components/ProductBreadcrumb.tsx, /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx, /home/ctp/Github/shuk-sham/app/[locale]/order-confirmation/page.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; Link
+(Used 7×)
+(Hero, ProductBreadcrumb, ShoppingCart, ...)&lt;/div&gt;"]:::multiConsumer
+  prop_saleribbon["&lt;div title="Prop: SaleRibbon
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductCard.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; SaleRibbon
+(Used 2×)
+(ProductCard, SingleProductView)&lt;/div&gt;"]:::multiConsumer
+  prop_productpagecontent["&lt;div title="Prop: ProductPageContent
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductPageContent.tsx, /home/ctp/Github/shuk-sham/app/[locale]/product/[id]/page.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductPageContent
+(Used 2×)
+(ProductPageContent, page)&lt;/div&gt;"]:::multiConsumer
+  prop_productquickview["&lt;div title="Prop: ProductQuickView
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductQuickView
+(Used 3×)
+(ProductQuickView, ProductsListMain, BrowseViewMain)&lt;/div&gt;"]:::multiConsumer
+  prop_productbadges["&lt;div title="Prop: ProductBadges
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductBadges
+(Used 2×)
+(ProductQuickView, SingleProductView)&lt;/div&gt;"]:::multiConsumer
+  prop_productlist["&lt;div title="Prop: ProductList
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/app/[locale]/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/cart-check/page.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductList
+(Used 3×)
+(ProductsListMain, page, page)&lt;/div&gt;"]:::multiConsumer
+  prop_productcard["&lt;div title="Prop: ProductCard
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductCard
+(Used 2×)
+(ProductsListMain, ProductCardWrapper)&lt;/div&gt;"]:::multiConsumer
+  prop_swipetoaction["&lt;div title="Prop: SwipeToAction
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/actions/ConfirmationModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; SwipeToAction
+(Used 4×)
+(ShoppingCart, ConfirmationModal, CartButton, ...)&lt;/div&gt;"]:::multiConsumer
+  prop_sharemodal["&lt;div title="Prop: ShareModal
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/SingleProductView.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/actions/ShareModal.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ShareModal
+(Used 3×)
+(SingleProductView, Menu, ShareModal)&lt;/div&gt;"]:::multiConsumer
+  prop_generatemetadata["&lt;div title="Prop: generateMetadata
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx, /home/ctp/Github/shuk-sham/app/[locale]/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/browse/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/product/[id]/page.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; generateMetadata
+(Used 4×)
+(layout, page, page, ...)&lt;/div&gt;"]:::multiConsumer
+  prop_helpmodal["&lt;div title="Prop: HelpModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/actions/HelpModal.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; HelpModal
+(Used 2×)
+(HelpModal, Menu)&lt;/div&gt;"]:::multiConsumer
+  prop_addressmodal["&lt;div title="Prop: AddressModal
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/AddressModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; AddressModal
+(Used 3×)
+(Menu, AddressModal, CartCheck)&lt;/div&gt;"]:::multiConsumer
+  prop_userauthmodal["&lt;div title="Prop: UserAuthModal
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/auth/AuthButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; UserAuthModal
+(Used 4×)
+(Menu, AuthButton, CartButton, ...)&lt;/div&gt;"]:::multiConsumer
+  prop_shineeffect["&lt;div title="Prop: ShineEffect
+Consumers: 1
+Used in: /home/ctp/Github/shuk-sham/components/actions/SwipeToAction.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ShineEffect
+(Used 1×)
+(SwipeToAction)&lt;/div&gt;"]:::multiConsumer
+  prop_notemodal["&lt;div title="Prop: NoteModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/actions/noteModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; NoteModal
+(Used 2×)
+(noteModal, CartCheck)&lt;/div&gt;"]:::multiConsumer
+  prop_ricloseline["&lt;div title="Prop: RiCloseLine
+Consumers: 1
+Used in: /home/ctp/Github/shuk-sham/components/auth/UserAuthModal.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; RiCloseLine
+(Used 1×)
+(UserAuthModal)&lt;/div&gt;"]:::multiConsumer
+  prop_checkout["&lt;div title="Prop: Checkout
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; Checkout
+(Used 2×)
+(Checkout, CheckoutModal)&lt;/div&gt;"]:::multiConsumer
+  prop_checkoutmodal["&lt;div title="Prop: CheckoutModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; CheckoutModal
+(Used 2×)
+(CheckoutModal, CartButton)&lt;/div&gt;"]:::multiConsumer
+  prop_categorynavigation["&lt;div title="Prop: CategoryNavigation
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx, /home/ctp/Github/shuk-sham/components/browse/CategoryNavigationBar.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; CategoryNavigation
+(Used 2×)
+(BrowseViewMain, CategoryNavigationBar)&lt;/div&gt;"]:::multiConsumer
+  prop_productsection["&lt;div title="Prop: ProductSection
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductSection
+(Used 2×)
+(BrowseViewMain, ProductSection)&lt;/div&gt;"]:::multiConsumer
+  prop_productcardwrapper["&lt;div title="Prop: ProductCardWrapper
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx"&gt;&lt;b&gt;Prop:&lt;/b&gt; ProductCardWrapper
+(Used 2×)
+(ProductCardWrapper, ProductSection)&lt;/div&gt;"]:::multiConsumer
+  prop_formatcacheage["&lt;div title="Prop: formatCacheAge
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/api/index.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"&gt;&lt;b&gt;Prop:&lt;/b&gt; formatCacheAge
+(Used 3×)
+(formatting, index, index)&lt;/div&gt;"]:::multiConsumer
+  prop_formatcachetime["&lt;div title="Prop: formatCacheTime
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"&gt;&lt;b&gt;Prop:&lt;/b&gt; formatCacheTime
+(Used 2×)
+(formatting, index)&lt;/div&gt;"]:::multiConsumer
+  prop_formathumantime["&lt;div title="Prop: formatHumanTime
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"&gt;&lt;b&gt;Prop:&lt;/b&gt; formatHumanTime
+(Used 2×)
+(formatting, index)&lt;/div&gt;"]:::multiConsumer
+  prop_get["&lt;div title="Prop: GET
+Consumers: 9
+Used in: /home/ctp/Github/shuk-sham/app/api/order/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/products/route.ts, /home/ctp/Github/shuk-sham/app/api/order/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/order/customer/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/category/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/products/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/me/route.ts, /home/ctp/Github/shuk-sham/app/api/order/customer/[id]/route.ts"&gt;&lt;b&gt;Prop:&lt;/b&gt; GET
+(Used 9×)
+(route, route, route, ...)&lt;/div&gt;"]:::multiConsumer
+  prop_post["&lt;div title="Prop: POST
+Consumers: 6
+Used in: /home/ctp/Github/shuk-sham/app/api/order/route.ts, /home/ctp/Github/shuk-sham/app/api/monitoring/metrics/route.ts, /home/ctp/Github/shuk-sham/app/api/users/route.ts, /home/ctp/Github/shuk-sham/app/api/users/logout/route.ts, /home/ctp/Github/shuk-sham/app/api/users/send-otp/route.ts, /home/ctp/Github/shuk-sham/app/api/users/verify-otp/route.ts"&gt;&lt;b&gt;Prop:&lt;/b&gt; POST
+(Used 6×)
+(route, route, route, ...)&lt;/div&gt;"]:::multiConsumer
+  prop_put["&lt;div title="Prop: PUT
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/app/api/order/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/route.ts, /home/ctp/Github/shuk-sham/app/api/users/[id]/route.ts"&gt;&lt;b&gt;Prop:&lt;/b&gt; PUT
+(Used 3×)
+(route, route, route)&lt;/div&gt;"]:::multiConsumer
+  end
+
+  subgraph ComponentProps["Component Props"]
+    subgraph parsecacheheaders_props["parseCacheHeaders Props"]
+  parsecacheheaders_prop_headers["&lt;div title="Prop: headers in parseCacheHeaders
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"&gt;&lt;b&gt;headers&lt;/b&gt;
+Type: undefined&lt;/div&gt;"]:::prop
+    end
+    subgraph formattime_props["formatTime Props"]
+  formattime_prop_ms["&lt;div title="Prop: ms in formatTime
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"&gt;&lt;b&gt;ms&lt;/b&gt;
+Type: undefined&lt;/div&gt;"]:::prop
+    end
+    subgraph fetchendpoint_props["fetchEndpoint Props"]
+  fetchendpoint_prop_url["&lt;div title="Prop: url in fetchEndpoint
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"&gt;&lt;b&gt;url&lt;/b&gt;
+Type: undefined&lt;/div&gt;"]:::prop
+    end
+    subgraph dataprovider_props["DataProvider Props"]
+  dataprovider_prop_destructured["&lt;div title="Prop: destructured in DataProvider
+Type: undefined
+File: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx"&gt;&lt;b&gt;destructured&lt;/b&gt;
+Type: undefined&lt;/div&gt;"]:::prop
+    end
+    subgraph conditionalhero_props["ConditionalHero Props"]
+  conditionalhero_prop_destructured["&lt;div title="Prop: destructured in ConditionalHero
+Type: undefined
+File: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx"&gt;&lt;b&gt;destructured&lt;/b&gt;
+Type: undefined&lt;/div&gt;"]:::prop
+    end
+    more_components["...and 70 more components"]
+  end
+
+  %% Import relationships
+  middleware --&gt; middleware
+  routing --&gt; middleware
+  routing --&gt; layout
+  routing --&gt; page
+  routing --&gt; request
+  routing --&gt; routing
+  next --&gt; next_config
+  next --&gt; layout
+  next --&gt; page
+  plugin --&gt; next_config
+  tailwindcss --&gt; tailwind_config
+  useuser --&gt; authcontext
+  useuser --&gt; menu
+  useuser --&gt; checkout
+  useuser --&gt; cartbutton
+  useuser --&gt; cartcheck
+  logger --&gt; authcontext
+  logger --&gt; datacontext
+  logger --&gt; backgroundfetcher
+  logger --&gt; userdashboard
+  logger --&gt; layout
+  logger --&gt; providers
+  logger --&gt; createentityhook
+  logger --&gt; useproduct
+  logger --&gt; useuser
+  logger --&gt; cache_diagnostic
+  logger --&gt; route
+  logger --&gt; fetchers
+  logger --&gt; user_api
+  logger --&gt; wp_api
+  logger --&gt; redis
+  logger --&gt; wp_cache
+  logger --&gt; cache_metrics
+  global --&gt; cartcontext
+  global --&gt; datacontext
+  global --&gt; backgroundfetcher
+  global --&gt; conditionalhero
+  global --&gt; headersearch
+  global --&gt; hero
+  global --&gt; productbadges
+  global --&gt; productcard
+  global --&gt; productquickview
+  global --&gt; productslistmain
+  global --&gt; saleribbon
+  global --&gt; singleproductview
+  global --&gt; siteconfig
+  global --&gt; confirmationmodal
+  global --&gt; emptycartnotification
+  global --&gt; productsearchmanager
+  global --&gt; searchresults
+  global --&gt; shineeffect
+  global --&gt; swipetoaction
+  global --&gt; notemodal
+  global --&gt; userauthmodal
+  global --&gt; browseviewmain
+  global --&gt; categorynavigationbar
+  global --&gt; productcardwrapper
+  global --&gt; productsection
+  global --&gt; createentityhook
+  global --&gt; usecategories
+  global --&gt; useorders
+  global --&gt; useproduct
+  global --&gt; useproducts
+  global --&gt; useuser
+  global --&gt; cartitem
+  global --&gt; auth
+  global --&gt; ui
+  global --&gt; fetchers
+  global --&gt; index
+  global --&gt; user_api
+  global --&gt; wp_api
+  global --&gt; wp_cache
+  global --&gt; page
+  global --&gt; route
+  hooks --&gt; cartcontext
+  hooks --&gt; datacontext
+  hooks --&gt; browseviewmain
+  confirmationmodal --&gt; cartcontext
+  emptycartnotification --&gt; cartcontext
+  navigation --&gt; cartcontext
+  navigation --&gt; datacontext
+  navigation --&gt; backgroundfetcher
+  navigation --&gt; categoryselectionmain
+  navigation --&gt; conditionalhero
+  navigation --&gt; header
+  navigation --&gt; headersearch
+  navigation --&gt; hero
+  navigation --&gt; productbadges
+  navigation --&gt; productbreadcrumb
+  navigation --&gt; productcard
+  navigation --&gt; productquickview
+  navigation --&gt; productslistmain
+  navigation --&gt; saleribbon
+  navigation --&gt; shoppingcart
+  navigation --&gt; singleproductview
+  navigation --&gt; userdashboard
+  navigation --&gt; layout
+  navigation --&gt; not_found
+  navigation --&gt; orderhistory
+  navigation --&gt; personalinfo
+  navigation --&gt; confirmationmodal
+  navigation --&gt; menu
+  navigation --&gt; productsearchmanager
+  navigation --&gt; swipetoaction
+  navigation --&gt; userauthmodal
+  navigation --&gt; checkout
+  navigation --&gt; checkoutmodal
+  navigation --&gt; browseviewmain
+  navigation --&gt; categorynavigationbar
+  navigation --&gt; cartbutton
+  navigation --&gt; cartcheck
+  navigation --&gt; cartstatepersistencehandler
+  navigation --&gt; emptycartnotification
+  navigation --&gt; page
+  navigation --&gt; routing
+  dealscontext --&gt; cartcontext
+  dealscontext --&gt; providers
+  dealscontext --&gt; dealsdebugpanel
+  dealscontext --&gt; usedealsdebug
+  deal --&gt; cartcontext
+  deal --&gt; dealscontext
+  deal --&gt; dealsdebugpanel
+  deal --&gt; usecartdiscounts
+  deal --&gt; cartitem
+  deal --&gt; index
+  loading --&gt; datacontext
+  loading --&gt; singleproductview
+  loading --&gt; page
+  error --&gt; datacontext
+  swr --&gt; backgroundfetcher
+  swr --&gt; providers
+  swr --&gt; swr
+  swr --&gt; createentityhook
+  swr --&gt; useorders
+  swr --&gt; useproduct
+  swr --&gt; useuser
+  swr --&gt; swr_config
+  fetchers --&gt; backgroundfetcher
+  fetchers --&gt; createentityhook
+  fetchers --&gt; usecategories
+  fetchers --&gt; useorders
+  fetchers --&gt; useproduct
+  fetchers --&gt; useproducts
+  fetchers --&gt; useuser
+  providers --&gt; backgroundfetcher
+  providers --&gt; browseviewwrapper
+  providers --&gt; layout
+  constants --&gt; backgroundfetcher
+  constants --&gt; providers
+  constants --&gt; createentityhook
+  constants --&gt; useorders
+  constants --&gt; useproduct
+  constants --&gt; useuser
+  constants --&gt; index
+  constants --&gt; swr_config
+  constants --&gt; wp_cache
+  constants --&gt; route
+  browseviewmain --&gt; browseviewwrapper
+  image --&gt; categoryselectionmain
+  image --&gt; headersearch
+  image --&gt; hero
+  image --&gt; productbadges
+  image --&gt; productcard
+  image --&gt; productquickview
+  image --&gt; shoppingcart
+  image --&gt; singleproductview
+  image --&gt; menu
+  image --&gt; productsearchmanager
+  image --&gt; searchresults
+  image --&gt; checkout
+  image --&gt; cartcheck
+  datacontext --&gt; categoryselectionmain
+  datacontext --&gt; productslistmain
+  datacontext --&gt; layout
+  datacontext --&gt; productsearchmanager
+  datacontext --&gt; devtools
+  hero --&gt; conditionalhero
+  lucide_react --&gt; header
+  lucide_react --&gt; productslistmain
+  lucide_react --&gt; menu
+  menu --&gt; header
+  productsearchmanager --&gt; header
+  next_intl --&gt; headersearch
+  next_intl --&gt; singleproductview
+  next_intl --&gt; userdashboard
+  next_intl --&gt; layout
+  next_intl --&gt; page
+  next_intl --&gt; orderhistory
+  next_intl --&gt; personalinfo
+  next_intl --&gt; emptycartnotification
+  index --&gt; headersearch
+  index --&gt; productquickview
+  index --&gt; productslistmain
+  index --&gt; singleproductview
+  index --&gt; searchresults
+  index --&gt; productcardwrapper
+  index --&gt; route
+  index --&gt; wp_cache
+  link --&gt; hero
+  link --&gt; productbreadcrumb
+  link --&gt; shoppingcart
+  link --&gt; menu
+  link --&gt; checkout
+  link --&gt; cartcheck
+  link --&gt; page
+  cartcontext --&gt; productcard
+  cartcontext --&gt; productquickview
+  cartcontext --&gt; shoppingcart
+  cartcontext --&gt; singleproductview
+  cartcontext --&gt; layout
+  cartcontext --&gt; orderhistory
+  cartcontext --&gt; searchresults
+  cartcontext --&gt; checkout
+  cartcontext --&gt; dealsdebugpanel
+  cartcontext --&gt; cartbutton
+  cartcontext --&gt; cartcheck
+  cartcontext --&gt; cartstatepersistencehandler
+  saleribbon --&gt; productcard
+  saleribbon --&gt; singleproductview
+  he --&gt; productcard
+  he --&gt; swipetoaction
+  he --&gt; cartbutton
+  ar --&gt; productcard
+  ar --&gt; swipetoaction
+  ar --&gt; cartbutton
+  singleproductview --&gt; productpagecontent
+  productbadges --&gt; productquickview
+  productbadges --&gt; singleproductview
+  productcard --&gt; productslistmain
+  productcard --&gt; productcardwrapper
+  productquickview --&gt; productslistmain
+  productquickview --&gt; browseviewmain
+  usedragscroll --&gt; productslistmain
+  authcontext --&gt; productslistmain
+  authcontext --&gt; userdashboard
+  authcontext --&gt; layout
+  authcontext --&gt; authbutton
+  useorders --&gt; productslistmain
+  useorders --&gt; orderhistory
+  swipetoaction --&gt; shoppingcart
+  swipetoaction --&gt; confirmationmodal
+  swipetoaction --&gt; cartbutton
+  swipetoaction --&gt; cartcheck
+  sharemodal --&gt; singleproductview
+  sharemodal --&gt; menu
+  useproduct --&gt; singleproductview
+  productbreadcrumb --&gt; singleproductview
+  userprofile --&gt; userdashboard
+  server --&gt; layout
+  server --&gt; page
+  server --&gt; route
+  server --&gt; auth
+  server --&gt; index
+  server --&gt; request
+  globals --&gt; layout
+  cartbutton --&gt; layout
+  heromessages --&gt; layout
+  cartstatepersistencehandler --&gt; layout
+  script --&gt; layout
+  siteconfig --&gt; layout
+  siteconfig --&gt; page
+  header --&gt; layout
+  conditionalhero --&gt; layout
+  devtools --&gt; layout
+  dealsdebugpanel --&gt; layout
+  categoryselectionmain --&gt; page
+  productslistmain --&gt; page
+  backgroundfetcher --&gt; page
+  checkout --&gt; orderhistory
+  checkout --&gt; checkout
+  checkout --&gt; checkoutmodal
+  user --&gt; personalinfo
+  user --&gt; addressmodal
+  addressmodal --&gt; menu
+  addressmodal --&gt; cartcheck
+  helpmodal --&gt; menu
+  userauthmodal --&gt; menu
+  userauthmodal --&gt; authbutton
+  userauthmodal --&gt; cartbutton
+  userauthmodal --&gt; cartcheck
+  useflasheffect --&gt; menu
+  useflasheffect --&gt; searchresults
+  searchresults --&gt; productsearchmanager
+  shineeffect --&gt; swipetoaction
+  ri --&gt; authbutton
+  ri --&gt; userauthmodal
+  checkout --&gt; checkoutmodal
+  categorynavigationbar --&gt; browseviewmain
+  productsection --&gt; browseviewmain
+  productcardwrapper --&gt; productsection
+  react_intersection_observer --&gt; productsection
+  checkoutmodal --&gt; cartbutton
+  user_api --&gt; cartbutton
+  notemodal --&gt; cartcheck
+  cache --&gt; swr
+  cache --&gt; index
+  cache --&gt; redis
+  cartitem --&gt; usecartdiscounts
+  createentityhook --&gt; usecategories
+  createentityhook --&gt; useproducts
+  cache_metrics --&gt; cache_diagnostic
+  cache_metrics --&gt; route
+  product --&gt; index
+  browseviewwrapper --&gt; page
+  orderconfirmation --&gt; page
+  userdashboard --&gt; page
+  redis --&gt; route
+  redis --&gt; wp_cache
+  os --&gt; route
+  wp_auth --&gt; route
+  wp_auth --&gt; wp_api
+  cartcheck --&gt; page
+  buffer --&gt; wp_auth
+  ioredis --&gt; redis
+  memory_cache --&gt; redis
+  cache_diagnostic --&gt; redis
+  cache_diagnostic --&gt; route
+  wp_api --&gt; wp_cache
+  route --&gt; wp_cache
+  perf_hooks --&gt; cache_metrics
+  productpagecontent --&gt; page
+  wp_cache --&gt; page
+  wp_cache --&gt; route
+  messages --&gt; orderconfirmation
+  deals --&gt; route
+  auth --&gt; route
+  cache_keys --&gt; route
+  uuid --&gt; route
+  %% Context relationships
+  authcontext --&gt;|creates| unnamedcontext
+  cartcontext --&gt;|creates| unnamedcontext
+  datacontext --&gt;|creates| unnamedcontext
+  dealscontext --&gt;|creates| unnamedcontext
+  %% Props relationships
+  parsecacheheaders --&gt;|has props| parsecacheheaders_props
+  formattime --&gt;|has props| formattime_props
+  fetchendpoint --&gt;|has props| fetchendpoint_props
+  confirmationmodal --&gt;|has props| confirmationmodal_props
+  emptycartnotification --&gt;|has props| emptycartnotification_props
+  dataprovider --&gt;|has props| dataprovider_props
+  error --&gt;|has props| error_props
+  image --&gt;|has props| image_props
+  conditionalhero --&gt;|has props| conditionalhero_props
+  hero --&gt;|has props| hero_props
+  chevronleft --&gt;|has props| chevronleft_props
+  productsearchmanager --&gt;|has props| productsearchmanager_props
+  menu --&gt;|has props| menu_props
+  link --&gt;|has props| link_props
+  getmessages --&gt;|has props| getmessages_props
+  saleribbon --&gt;|has props| saleribbon_props
+  productpagecontent --&gt;|has props| productpagecontent_props
+  singleproductview --&gt;|has props| singleproductview_props
+  productquickview --&gt;|has props| productquickview_props
+  productbadges --&gt;|has props| productbadges_props
+  productlist --&gt;|has props| productlist_props
+  getrandomproducts --&gt;|has props| getrandomproducts_props
+  productcard --&gt;|has props| productcard_props
+  chevronright --&gt;|has props| chevronright_props
+  swipetoaction --&gt;|has props| swipetoaction_props
+  productbreadcrumb --&gt;|has props| productbreadcrumb_props
+  sharemodal --&gt;|has props| sharemodal_props
+  personalinfo --&gt;|has props| personalinfo_props
+  orderhistory --&gt;|has props| orderhistory_props
+  generatemetadata --&gt;|has props| generatemetadata_props
+  localelayout --&gt;|has props| localelayout_props
+  script --&gt;|has props| script_props
+  nextintlclientprovider --&gt;|has props| nextintlclientprovider_props
+  swrprovider --&gt;|has props| swrprovider_props
+  swrconfig --&gt;|has props| swrconfig_props
+  providers --&gt;|has props| providers_props
+  helpmodal --&gt;|has props| helpmodal_props
+  addressmodal --&gt;|has props| addressmodal_props
+  userauthmodal --&gt;|has props| userauthmodal_props
+  searchresults --&gt;|has props| searchresults_props
+  shineeffect --&gt;|has props| shineeffect_props
+  notemodal --&gt;|has props| notemodal_props
+  riuserline --&gt;|has props| riuserline_props
+  ricloseline --&gt;|has props| ricloseline_props
+  riuser3line --&gt;|has props| riuser3line_props
+  riarrowleftsline --&gt;|has props| riarrowleftsline_props
+  rilogoutboxrline --&gt;|has props| rilogoutboxrline_props
+  checkout --&gt;|has props| checkout_props
+  checkoutmodal --&gt;|has props| checkoutmodal_props
+  categorynavigation --&gt;|has props| categorynavigation_props
+  productsection --&gt;|has props| productsection_props
+  productcardwrapper --&gt;|has props| productcardwrapper_props
+  createentityhook --&gt;|has props| createentityhook_props
+  usedragscroll --&gt;|has props| usedragscroll_props
+  useflasheffect --&gt;|has props| useflasheffect_props
+  useproduct --&gt;|has props| useproduct_props
+  logcache --&gt;|has props| logcache_props
+  getlayersymbol --&gt;|has props| getlayersymbol_props
+  getactiontext --&gt;|has props| getactiontext_props
+  formatcacheage --&gt;|has props| formatcacheage_props
+  formatcachetime --&gt;|has props| formatcachetime_props
+  formathumantime --&gt;|has props| formathumantime_props
+  formatprice --&gt;|has props| formatprice_props
+  suspense --&gt;|has props| suspense_props
+  get --&gt;|has props| get_props
+  post --&gt;|has props| post_props
+  apifetcher --&gt;|has props| apifetcher_props
+  userfetcher --&gt;|has props| userfetcher_props
+  productsfetcher --&gt;|has props| productsfetcher_props
+  productfetcher --&gt;|has props| productfetcher_props
+  categoriesfetcher --&gt;|has props| categoriesfetcher_props
+  ordersfetcher --&gt;|has props| ordersfetcher_props
+  iscachevalid --&gt;|has props| iscachevalid_props
+  fetchcurrentuser --&gt;|has props| fetchcurrentuser_props
+  wpapifetch --&gt;|has props| wpapifetch_props
+  isauthenticated --&gt;|has props| isauthenticated_props
+  setauthheaders --&gt;|has props| setauthheaders_props
+  clearauthcookies --&gt;|has props| clearauthcookies_props
+  safecacheage --&gt;|has props| safecacheage_props
+  calculatecachepercent --&gt;|has props| calculatecachepercent_props
+  getcachediagnostics --&gt;|has props| getcachediagnostics_props
+  addcacheheaders --&gt;|has props| addcacheheaders_props
+  adddevelopmentcacheheaders --&gt;|has props| adddevelopmentcacheheaders_props
+  getfromcache --&gt;|has props| getfromcache_props
+  setincache --&gt;|has props| setincache_props
+  deletefromcache --&gt;|has props| deletefromcache_props
+  getcategorycachekey --&gt;|has props| getcategorycachekey_props
+  getproductcachekey --&gt;|has props| getproductcachekey_props
+  getusercachekey --&gt;|has props| getusercachekey_props
+  transformcategories --&gt;|has props| transformcategories_props
+  getcategories --&gt;|has props| getcategories_props
+  getproducts --&gt;|has props| getproducts_props
+  paginateproducts --&gt;|has props| paginateproducts_props
+  pretransformproducts --&gt;|has props| pretransformproducts_props
+  setmetricsenabled --&gt;|has props| setmetricsenabled_props
+  trackcacheoperation --&gt;|has props| trackcacheoperation_props
+  maptoobject --&gt;|has props| maptoobject_props
+  withcachemetrics --&gt;|has props| withcachemetrics_props
+  page --&gt;|has props| page_props
+  put --&gt;|has props| put_props
+  delete --&gt;|has props| delete_props
+  prop_error -.-&gt;|used by| datacontext
+  prop_error -.-&gt;|used by| error
+  prop_image -.-&gt;|used by| categoryselectionmain
+  prop_image -.-&gt;|used by| headersearch
+  prop_image -.-&gt;|used by| hero
+  prop_conditionalhero -.-&gt;|used by| conditionalhero
+  prop_conditionalhero -.-&gt;|used by| layout
+  prop_hero -.-&gt;|used by| conditionalhero
+  prop_hero -.-&gt;|used by| hero
+  prop_chevronleft -.-&gt;|used by| header
+  prop_chevronleft -.-&gt;|used by| productslistmain
+  prop_chevronleft -.-&gt;|used by| menu
+  prop_productsearchmanager -.-&gt;|used by| header
+  prop_productsearchmanager -.-&gt;|used by| productsearchmanager
+  prop_menu -.-&gt;|used by| header
+  prop_menu -.-&gt;|used by| menu
+  prop_link -.-&gt;|used by| hero
+  prop_link -.-&gt;|used by| productbreadcrumb
+  prop_link -.-&gt;|used by| shoppingcart
+  prop_saleribbon -.-&gt;|used by| productcard
+  prop_saleribbon -.-&gt;|used by| singleproductview
+  prop_productpagecontent -.-&gt;|used by| productpagecontent
+  prop_productpagecontent -.-&gt;|used by| page
+  prop_productquickview -.-&gt;|used by| productquickview
+  prop_productquickview -.-&gt;|used by| productslistmain
+  prop_productquickview -.-&gt;|used by| browseviewmain
+  prop_productbadges -.-&gt;|used by| productquickview
+  prop_productbadges -.-&gt;|used by| singleproductview
+  prop_productlist -.-&gt;|used by| productslistmain
+  prop_productlist -.-&gt;|used by| page
+  prop_productlist -.-&gt;|used by| page
+  prop_productcard -.-&gt;|used by| productslistmain
+  prop_productcard -.-&gt;|used by| productcardwrapper
+  prop_swipetoaction -.-&gt;|used by| shoppingcart
+  prop_swipetoaction -.-&gt;|used by| confirmationmodal
+  prop_swipetoaction -.-&gt;|used by| cartbutton
+  prop_sharemodal -.-&gt;|used by| singleproductview
+  prop_sharemodal -.-&gt;|used by| menu
+  prop_sharemodal -.-&gt;|used by| sharemodal
+  prop_generatemetadata -.-&gt;|used by| layout
+  prop_generatemetadata -.-&gt;|used by| page
+  prop_generatemetadata -.-&gt;|used by| page
+  prop_helpmodal -.-&gt;|used by| helpmodal
+  prop_helpmodal -.-&gt;|used by| menu
+  prop_addressmodal -.-&gt;|used by| menu
+  prop_addressmodal -.-&gt;|used by| addressmodal
+  prop_addressmodal -.-&gt;|used by| cartcheck
+  prop_userauthmodal -.-&gt;|used by| menu
+  prop_userauthmodal -.-&gt;|used by| authbutton
+  prop_userauthmodal -.-&gt;|used by| cartbutton
+  prop_shineeffect -.-&gt;|used by| swipetoaction
+  prop_notemodal -.-&gt;|used by| notemodal
+  prop_notemodal -.-&gt;|used by| cartcheck
+  prop_ricloseline -.-&gt;|used by| userauthmodal
+  prop_checkout -.-&gt;|used by| checkout
+  prop_checkout -.-&gt;|used by| checkoutmodal
+  prop_checkoutmodal -.-&gt;|used by| checkoutmodal
+  prop_checkoutmodal -.-&gt;|used by| cartbutton
+  prop_categorynavigation -.-&gt;|used by| browseviewmain
+  prop_categorynavigation -.-&gt;|used by| categorynavigationbar
+  prop_productsection -.-&gt;|used by| browseviewmain
+  prop_productsection -.-&gt;|used by| productsection
+  prop_productcardwrapper -.-&gt;|used by| productcardwrapper
+  prop_productcardwrapper -.-&gt;|used by| productsection
+  prop_formatcacheage -.-&gt;|used by| formatting
+  prop_formatcacheage -.-&gt;|used by| index
+  prop_formatcacheage -.-&gt;|used by| index
+  prop_formatcachetime -.-&gt;|used by| formatting
+  prop_formatcachetime -.-&gt;|used by| index
+  prop_formathumantime -.-&gt;|used by| formatting
+  prop_formathumantime -.-&gt;|used by| index
+  prop_get -.-&gt;|used by| route
+  prop_get -.-&gt;|used by| route
+  prop_get -.-&gt;|used by| route
+  prop_post -.-&gt;|used by| route
+  prop_post -.-&gt;|used by| route
+  prop_post -.-&gt;|used by| route
+  prop_put -.-&gt;|used by| route
+  prop_put -.-&gt;|used by| route
+  prop_put -.-&gt;|used by| route
+  %% Object relationships
+  %% Array relationships
+  %% Map operations
+  items --&gt;|mapped in| cartcontext
+  prevcart --&gt;|mapped in| cartcontext
+  prev --&gt;|mapped in| cartcontext
+  cartitems --&gt;|mapped in| cartcontext
+  cartitems --&gt;|mapped in| shoppingcart
+  cartitems --&gt;|mapped in| checkout
+  dealsarray --&gt;|mapped in| dealscontext
+  filteredcategories --&gt;|mapped in| categoryselectionmain
+  dietaryflags --&gt;|mapped in| headersearch
+  dietaryflags --&gt;|mapped in| productbadges
+  searchresults --&gt;|mapped in| headersearch
+  displayproducts --&gt;|mapped in| productslistmain
+  containslist --&gt;|mapped in| singleproductview
+  maycontainlist --&gt;|mapped in| singleproductview
+  orders --&gt;|mapped in| orderhistory
+  results --&gt;|mapped in| searchresults
+  sortedmaincategories --&gt;|mapped in| categorynavigationbar
+  visibleproducts --&gt;|mapped in| productsection
+  itemswiththisdeal --&gt;|mapped in| dealsdebugpanel
+  deals --&gt;|mapped in| dealsdebugpanel
+  alldealstoshow --&gt;|mapped in| dealsdebugpanel
+  allproducts --&gt;|mapped in| wp_api
+  existinglineitems --&gt;|mapped in| route
+  line_items --&gt;|mapped in| route
+</pre>
+  </div>
+  
+  
+  <!-- Controls for zooming -->
+  <div class="controls">
+    <button id="zoom-in">+</button>
+    <button id="zoom-out">-</button>
+    <button id="reset">Reset</button>
+  </div>
+  
+  
+  <div class="tabs">
+    <div class="tab active" data-tab="flowchart">Flowchart Visualization</div>
+    <div class="tab" data-tab="text">Text-Styled Flowchart</div>
+  </div>
+  
+  <!-- Legend for understanding the diagram -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color component-color"></div>
+      <span>Component</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color context-color"></div>
+      <span>Context</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color object-color"></div>
+      <span>Object</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color array-color"></div>
+      <span>Array</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color map-color"></div>
+      <span>Map Operation</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color multi-color"></div>
+      <span>Multi-Consumed</span>
+    </div>
+  </div>
+  
+  <div id="flowchart-tab" class="tab-content active">
+    <div id="graph"></div>
+    <div class="export-controls">
+      <button id="export-png">Export as PNG</button>
+      <button id="fullscreen">Fullscreen</button>
+    </div>
+  </div>
+  <div id="text-tab" class="tab-content">
+    <h3>Text-Styled Flowchart</h3>
+    <div id="text-flow"></div>
+  </div>
+  
+  <!-- Static diagram fallback -->
+  <div id="fallback-section" class="fallback-warning">
+    <h3>⚠️ Display Issue Detected</h3>
+    <p>If you're seeing this message and no diagram appears above, your browser may be blocking JavaScript for local files.</p>
+    <p><strong>Troubleshooting steps:</strong></p>
+    <ol>
+      <li><strong>Use a local server:</strong> From the command line, navigate to this directory and run:
+        <br><code>python3 -m http.server 8000</code>
+        <br>Then access <a href="http://localhost:8000" id="server-link">http://localhost:8000</a>
+      </li>
+      <li><strong>View the PNG:</strong> See the <code>dependency-map.png</code> file in this directory</li>
+      <li><strong>Use Mermaid Live Editor:</strong> Copy the code below into <a href="https://mermaid.live" target="_blank">mermaid.live</a></li>
+    </ol>
+    <div class="fallback-container">
+      <div id="static-mermaid" class="mermaid">
+        <!-- MERMAID_CODE -->
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Initialize mermaid with better settings
+    mermaid.initialize({ 
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      flowchart: {
+        htmlLabels: true,
+        curve: 'basis'
+      }
+    });
+    
+    try {
+      // Render the mermaid diagram
+      // This is a placeholder that will be replaced by the actual mermaid content
+      const mermaidCode = `%%{init: {"theme": "default", "flowchart": {"htmlLabels": true, "curve": "basis"}}}%%
+flowchart LR
+  %% Style definitions
+  classDef component fill:#e1f5fe,stroke:#0288d1,color:#01579b,stroke-width:2px
+  classDef context fill:#fff9c4,stroke:#fbc02d,color:#f57f17,stroke-width:2px
+  classDef object fill:#e8f5e9,stroke:#43a047,color:#1b5e20,stroke-width:1px
+  classDef array fill:#f3e5f5,stroke:#8e24aa,color:#4a148c,stroke-width:1px
+  classDef map fill:#ffebee,stroke:#e53935,color:#b71c1c,stroke-width:1px
+  classDef multiConsumer fill:#ede7f6,stroke:#673ab7,color:#311b92,stroke-width:3px
+  classDef provider fill:#e8f5e9,stroke:#43a047,color:#1b5e20,stroke-width:2px,stroke-dasharray:5,5
+  classDef hook fill:#bbdefb,stroke:#1976d2,color:#0d47a1,stroke-width:1px
+  classDef prop fill:#e1f5fe,stroke:#0288d1,color:#01579b,stroke-width:1px,stroke-dasharray:3,3
+
+  subgraph Components
+    subgraph contexts_components["contexts"]
+  authcontext["<div title="Component: AuthContext
+File: /home/ctp/Github/shuk-sham/contexts/AuthContext.tsx
+Props: 0
+Contexts Used: 0"><b>AuthContext</b>
+(Props: 0)</div>"]:::component
+  cartcontext["<div title="Component: CartContext
+File: /home/ctp/Github/shuk-sham/contexts/CartContext.tsx
+Props: 0
+Contexts Used: 0"><b>CartContext</b>
+(Props: 0)</div>"]:::component
+  datacontext["<div title="Component: DataContext
+File: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx
+Props: 0
+Contexts Used: 0"><b>DataContext</b>
+(Props: 0)</div>"]:::component
+  dealscontext["<div title="Component: DealsContext
+File: /home/ctp/Github/shuk-sham/contexts/DealsContext.tsx
+Props: 0
+Contexts Used: 0"><b>DealsContext</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph components_components["components"]
+  backgroundfetcher["<div title="Component: BackgroundFetcher
+File: /home/ctp/Github/shuk-sham/components/BackgroundFetcher.tsx
+Props: 0
+Contexts Used: 0"><b>BackgroundFetcher</b>
+(Props: 0)</div>"]:::component
+  browseviewwrapper["<div title="Component: BrowseViewWrapper
+File: /home/ctp/Github/shuk-sham/components/BrowseViewWrapper.tsx
+Props: 0
+Contexts Used: 0"><b>BrowseViewWrapper</b>
+(Props: 0)</div>"]:::component
+  categoryselectionmain["<div title="Component: CategorySelectionMain
+File: /home/ctp/Github/shuk-sham/components/CategorySelectionMain.tsx
+Props: 0
+Contexts Used: 0"><b>CategorySelectionMain</b>
+(Props: 0)</div>"]:::component
+  conditionalhero["<div title="Component: ConditionalHero
+File: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx
+Props: 2
+Contexts Used: 0"><b>ConditionalHero</b>
+(Props: 2)</div>"]:::component
+  header["<div title="Component: Header
+File: /home/ctp/Github/shuk-sham/components/Header.tsx
+Props: 0
+Contexts Used: 0"><b>Header</b>
+(Props: 0)</div>"]:::component
+  headersearch["<div title="Component: HeaderSearch
+File: /home/ctp/Github/shuk-sham/components/HeaderSearch.tsx
+Props: 0
+Contexts Used: 0"><b>HeaderSearch</b>
+(Props: 0)</div>"]:::component
+  hero["<div title="Component: Hero
+File: /home/ctp/Github/shuk-sham/components/Hero.tsx
+Props: 2
+Contexts Used: 0"><b>Hero</b>
+(Props: 2)</div>"]:::component
+  productbadges["<div title="Component: ProductBadges
+File: /home/ctp/Github/shuk-sham/components/ProductBadges.tsx
+Props: 2
+Contexts Used: 0"><b>ProductBadges</b>
+(Props: 2)</div>"]:::component
+  productbreadcrumb["<div title="Component: ProductBreadcrumb
+File: /home/ctp/Github/shuk-sham/components/ProductBreadcrumb.tsx
+Props: 1
+Contexts Used: 0"><b>ProductBreadcrumb</b>
+(Props: 1)</div>"]:::component
+  productcard["<div title="Component: ProductCard
+File: /home/ctp/Github/shuk-sham/components/ProductCard.tsx
+Props: 2
+Contexts Used: 0"><b>ProductCard</b>
+(Props: 2)</div>"]:::component
+  productpagecontent["<div title="Component: ProductPageContent
+File: /home/ctp/Github/shuk-sham/components/ProductPageContent.tsx
+Props: 2
+Contexts Used: 0"><b>ProductPageContent</b>
+(Props: 2)</div>"]:::component
+  productquickview["<div title="Component: ProductQuickView
+File: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx
+Props: 3
+Contexts Used: 0"><b>ProductQuickView</b>
+(Props: 3)</div>"]:::component
+  productslistmain["<div title="Component: ProductsListMain
+File: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx
+Props: 0
+Contexts Used: 0"><b>ProductsListMain</b>
+(Props: 0)</div>"]:::component
+  saleribbon["<div title="Component: SaleRibbon
+File: /home/ctp/Github/shuk-sham/components/SaleRibbon.tsx
+Props: 3
+Contexts Used: 0"><b>SaleRibbon</b>
+(Props: 3)</div>"]:::component
+  shoppingcart["<div title="Component: ShoppingCart
+File: /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx
+Props: 0
+Contexts Used: 0"><b>ShoppingCart</b>
+(Props: 0)</div>"]:::component
+  singleproductview["<div title="Component: SingleProductView
+File: /home/ctp/Github/shuk-sham/components/SingleProductView.tsx
+Props: 1
+Contexts Used: 0"><b>SingleProductView</b>
+(Props: 1)</div>"]:::component
+  userdashboard["<div title="Component: UserDashboard
+File: /home/ctp/Github/shuk-sham/components/UserDashboard.tsx
+Props: 0
+Contexts Used: 0"><b>UserDashboard</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph _locale__components["[locale]"]
+  layout["<div title="Component: layout
+File: /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx
+Props: 0
+Contexts Used: 0"><b>layout</b>
+(Props: 0)</div>"]:::component
+  not_found["<div title="Component: not-found
+File: /home/ctp/Github/shuk-sham/app/[locale]/not-found.tsx
+Props: 0
+Contexts Used: 0"><b>not-found</b>
+(Props: 0)</div>"]:::component
+  page["<div title="Component: page
+File: /home/ctp/Github/shuk-sham/app/[locale]/page.tsx
+Props: 0
+Contexts Used: 0"><b>page</b>
+(Props: 0)</div>"]:::component
+  providers["<div title="Component: providers
+File: /home/ctp/Github/shuk-sham/app/[locale]/providers.tsx
+Props: 0
+Contexts Used: 0"><b>providers</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph userprofile_components["UserProfile"]
+  orderhistory["<div title="Component: OrderHistory
+File: /home/ctp/Github/shuk-sham/components/UserProfile/OrderHistory.tsx
+Props: 1
+Contexts Used: 0"><b>OrderHistory</b>
+(Props: 1)</div>"]:::component
+  personalinfo["<div title="Component: PersonalInfo
+File: /home/ctp/Github/shuk-sham/components/UserProfile/PersonalInfo.tsx
+Props: 1
+Contexts Used: 0"><b>PersonalInfo</b>
+(Props: 1)</div>"]:::component
+    end
+    subgraph actions_components["actions"]
+  confirmationmodal["<div title="Component: ConfirmationModal
+File: /home/ctp/Github/shuk-sham/components/actions/ConfirmationModal.tsx
+Props: 1
+Contexts Used: 0"><b>ConfirmationModal</b>
+(Props: 1)</div>"]:::component
+  emptycartnotification["<div title="Component: EmptyCartNotification
+File: /home/ctp/Github/shuk-sham/components/actions/EmptyCartNotification.tsx
+Props: 1
+Contexts Used: 0"><b>EmptyCartNotification</b>
+(Props: 1)</div>"]:::component
+  helpmodal["<div title="Component: HelpModal
+File: /home/ctp/Github/shuk-sham/components/actions/HelpModal.tsx
+Props: 2
+Contexts Used: 0"><b>HelpModal</b>
+(Props: 2)</div>"]:::component
+  menu["<div title="Component: Menu
+File: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx
+Props: 2
+Contexts Used: 0"><b>Menu</b>
+(Props: 2)</div>"]:::component
+  productsearchmanager["<div title="Component: ProductSearchManager
+File: /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx
+Props: 2
+Contexts Used: 0"><b>ProductSearchManager</b>
+(Props: 2)</div>"]:::component
+  searchresults["<div title="Component: SearchResults
+File: /home/ctp/Github/shuk-sham/components/actions/SearchResults.tsx
+Props: 1
+Contexts Used: 0"><b>SearchResults</b>
+(Props: 1)</div>"]:::component
+  sharemodal["<div title="Component: ShareModal
+File: /home/ctp/Github/shuk-sham/components/actions/ShareModal.tsx
+Props: 3
+Contexts Used: 0"><b>ShareModal</b>
+(Props: 3)</div>"]:::component
+  shineeffect["<div title="Component: ShineEffect
+File: /home/ctp/Github/shuk-sham/components/actions/ShineEffect.tsx
+Props: 2
+Contexts Used: 0"><b>ShineEffect</b>
+(Props: 2)</div>"]:::component
+  swipetoaction["<div title="Component: SwipeToAction
+File: /home/ctp/Github/shuk-sham/components/actions/SwipeToAction.tsx
+Props: 6
+Contexts Used: 0"><b>SwipeToAction</b>
+(Props: 6)</div>"]:::component
+  notemodal["<div title="Component: noteModal
+File: /home/ctp/Github/shuk-sham/components/actions/noteModal.tsx
+Props: 0
+Contexts Used: 0"><b>noteModal</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph auth_components["auth"]
+  authbutton["<div title="Component: AuthButton
+File: /home/ctp/Github/shuk-sham/components/auth/AuthButton.tsx
+Props: 0
+Contexts Used: 0"><b>AuthButton</b>
+(Props: 0)</div>"]:::component
+  userauthmodal["<div title="Component: UserAuthModal
+File: /home/ctp/Github/shuk-sham/components/auth/UserAuthModal.tsx
+Props: 4
+Contexts Used: 0"><b>UserAuthModal</b>
+(Props: 4)</div>"]:::component
+    end
+    subgraph checkout_components["checkout"]
+  checkout["<div title="Component: Checkout
+File: /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx
+Props: 2
+Contexts Used: 0"><b>Checkout</b>
+(Props: 2)</div>"]:::component
+  checkoutmodal["<div title="Component: CheckoutModal
+File: /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx
+Props: 2
+Contexts Used: 0"><b>CheckoutModal</b>
+(Props: 2)</div>"]:::component
+    end
+    subgraph browse_components["browse"]
+  browseviewmain["<div title="Component: BrowseViewMain
+File: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx
+Props: 0
+Contexts Used: 0"><b>BrowseViewMain</b>
+(Props: 0)</div>"]:::component
+  categorynavigationbar["<div title="Component: CategoryNavigationBar
+File: /home/ctp/Github/shuk-sham/components/browse/CategoryNavigationBar.tsx
+Props: 0
+Contexts Used: 0"><b>CategoryNavigationBar</b>
+(Props: 0)</div>"]:::component
+  productcardwrapper["<div title="Component: ProductCardWrapper
+File: /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx
+Props: 2
+Contexts Used: 0"><b>ProductCardWrapper</b>
+(Props: 2)</div>"]:::component
+  productsection["<div title="Component: ProductSection
+File: /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx
+Props: 2
+Contexts Used: 0"><b>ProductSection</b>
+(Props: 2)</div>"]:::component
+    end
+    subgraph debug_components["debug"]
+  dealsdebugpanel["<div title="Component: DealsDebugPanel
+File: /home/ctp/Github/shuk-sham/components/debug/DealsDebugPanel.tsx
+Props: 0
+Contexts Used: 0"><b>DealsDebugPanel</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph dev_components["dev"]
+  devtools["<div title="Component: DevTools
+File: /home/ctp/Github/shuk-sham/components/dev/DevTools.tsx
+Props: 0
+Contexts Used: 0"><b>DevTools</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph shopping_cart_components["shopping-cart"]
+  addressmodal["<div title="Component: AddressModal
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/AddressModal.tsx
+Props: 3
+Contexts Used: 0"><b>AddressModal</b>
+(Props: 3)</div>"]:::component
+  cartbutton["<div title="Component: CartButton
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx
+Props: 0
+Contexts Used: 0"><b>CartButton</b>
+(Props: 0)</div>"]:::component
+  cartcheck["<div title="Component: CartCheck
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx
+Props: 0
+Contexts Used: 0"><b>CartCheck</b>
+(Props: 0)</div>"]:::component
+  cartstatepersistencehandler["<div title="Component: CartStatePersistenceHandler
+File: /home/ctp/Github/shuk-sham/components/shopping-cart/CartStatePersistenceHandler.tsx
+Props: 0
+Contexts Used: 0"><b>CartStatePersistenceHandler</b>
+(Props: 0)</div>"]:::component
+    end
+    subgraph browse_components["browse"]
+    end
+    subgraph order_confirmation_components["order-confirmation"]
+    end
+    subgraph user_dashboard_components["user-dashboard"]
+    end
+    subgraph cart_check_components["cart-check"]
+    end
+    subgraph _id__components["[id]"]
+    end
+  end
+
+  subgraph Contexts
+  unnamedcontext["<div title="Context: UnnamedContext
+Type: undefined
+Created in: /home/ctp/Github/shuk-sham/contexts/AuthContext.tsx, /home/ctp/Github/shuk-sham/contexts/CartContext.tsx, /home/ctp/Github/shuk-sham/contexts/DataContext.tsx, /home/ctp/Github/shuk-sham/contexts/DealsContext.tsx
+Consumed by: "><b>Context:</b> UnnamedContext
+(0 consumers)
+Initial: undefined</div>"]:::context
+  end
+
+  subgraph SharedProps["Shared Props"]
+  prop_error["<div title="Prop: Error
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx, /home/ctp/Github/shuk-sham/components/actions/Error.tsx"><b>Prop:</b> Error
+(Used 2×)
+(DataContext, Error)</div>"]:::multiConsumer
+  prop_image["<div title="Prop: Image
+Consumers: 13
+Used in: /home/ctp/Github/shuk-sham/components/CategorySelectionMain.tsx, /home/ctp/Github/shuk-sham/components/HeaderSearch.tsx, /home/ctp/Github/shuk-sham/components/Hero.tsx, /home/ctp/Github/shuk-sham/components/ProductBadges.tsx, /home/ctp/Github/shuk-sham/components/ProductCard.tsx, /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx, /home/ctp/Github/shuk-sham/components/actions/SearchResults.tsx, /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> Image
+(Used 13×)
+(CategorySelectionMain, HeaderSearch, Hero, ...)</div>"]:::multiConsumer
+  prop_conditionalhero["<div title="Prop: ConditionalHero
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx, /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx"><b>Prop:</b> ConditionalHero
+(Used 2×)
+(ConditionalHero, layout)</div>"]:::multiConsumer
+  prop_hero["<div title="Prop: Hero
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx, /home/ctp/Github/shuk-sham/components/Hero.tsx"><b>Prop:</b> Hero
+(Used 2×)
+(ConditionalHero, Hero)</div>"]:::multiConsumer
+  prop_chevronleft["<div title="Prop: ChevronLeft
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"><b>Prop:</b> ChevronLeft
+(Used 3×)
+(Header, ProductsListMain, Menu)</div>"]:::multiConsumer
+  prop_productsearchmanager["<div title="Prop: ProductSearchManager
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/actions/ProductSearchManager.tsx"><b>Prop:</b> ProductSearchManager
+(Used 2×)
+(Header, ProductSearchManager)</div>"]:::multiConsumer
+  prop_menu["<div title="Prop: Menu
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/Header.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"><b>Prop:</b> Menu
+(Used 2×)
+(Header, Menu)</div>"]:::multiConsumer
+  prop_link["<div title="Prop: Link
+Consumers: 7
+Used in: /home/ctp/Github/shuk-sham/components/Hero.tsx, /home/ctp/Github/shuk-sham/components/ProductBreadcrumb.tsx, /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx, /home/ctp/Github/shuk-sham/app/[locale]/order-confirmation/page.tsx"><b>Prop:</b> Link
+(Used 7×)
+(Hero, ProductBreadcrumb, ShoppingCart, ...)</div>"]:::multiConsumer
+  prop_saleribbon["<div title="Prop: SaleRibbon
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductCard.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx"><b>Prop:</b> SaleRibbon
+(Used 2×)
+(ProductCard, SingleProductView)</div>"]:::multiConsumer
+  prop_productpagecontent["<div title="Prop: ProductPageContent
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductPageContent.tsx, /home/ctp/Github/shuk-sham/app/[locale]/product/[id]/page.tsx"><b>Prop:</b> ProductPageContent
+(Used 2×)
+(ProductPageContent, page)</div>"]:::multiConsumer
+  prop_productquickview["<div title="Prop: ProductQuickView
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx"><b>Prop:</b> ProductQuickView
+(Used 3×)
+(ProductQuickView, ProductsListMain, BrowseViewMain)</div>"]:::multiConsumer
+  prop_productbadges["<div title="Prop: ProductBadges
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductQuickView.tsx, /home/ctp/Github/shuk-sham/components/SingleProductView.tsx"><b>Prop:</b> ProductBadges
+(Used 2×)
+(ProductQuickView, SingleProductView)</div>"]:::multiConsumer
+  prop_productlist["<div title="Prop: ProductList
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/app/[locale]/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/cart-check/page.tsx"><b>Prop:</b> ProductList
+(Used 3×)
+(ProductsListMain, page, page)</div>"]:::multiConsumer
+  prop_productcard["<div title="Prop: ProductCard
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/ProductsListMain.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx"><b>Prop:</b> ProductCard
+(Used 2×)
+(ProductsListMain, ProductCardWrapper)</div>"]:::multiConsumer
+  prop_swipetoaction["<div title="Prop: SwipeToAction
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/components/ShoppingCart.tsx, /home/ctp/Github/shuk-sham/components/actions/ConfirmationModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> SwipeToAction
+(Used 4×)
+(ShoppingCart, ConfirmationModal, CartButton, ...)</div>"]:::multiConsumer
+  prop_sharemodal["<div title="Prop: ShareModal
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/SingleProductView.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/actions/ShareModal.tsx"><b>Prop:</b> ShareModal
+(Used 3×)
+(SingleProductView, Menu, ShareModal)</div>"]:::multiConsumer
+  prop_generatemetadata["<div title="Prop: generateMetadata
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/app/[locale]/layout.tsx, /home/ctp/Github/shuk-sham/app/[locale]/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/browse/page.tsx, /home/ctp/Github/shuk-sham/app/[locale]/product/[id]/page.tsx"><b>Prop:</b> generateMetadata
+(Used 4×)
+(layout, page, page, ...)</div>"]:::multiConsumer
+  prop_helpmodal["<div title="Prop: HelpModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/actions/HelpModal.tsx, /home/ctp/Github/shuk-sham/components/actions/Menu.tsx"><b>Prop:</b> HelpModal
+(Used 2×)
+(HelpModal, Menu)</div>"]:::multiConsumer
+  prop_addressmodal["<div title="Prop: AddressModal
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/AddressModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> AddressModal
+(Used 3×)
+(Menu, AddressModal, CartCheck)</div>"]:::multiConsumer
+  prop_userauthmodal["<div title="Prop: UserAuthModal
+Consumers: 4
+Used in: /home/ctp/Github/shuk-sham/components/actions/Menu.tsx, /home/ctp/Github/shuk-sham/components/auth/AuthButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> UserAuthModal
+(Used 4×)
+(Menu, AuthButton, CartButton, ...)</div>"]:::multiConsumer
+  prop_shineeffect["<div title="Prop: ShineEffect
+Consumers: 1
+Used in: /home/ctp/Github/shuk-sham/components/actions/SwipeToAction.tsx"><b>Prop:</b> ShineEffect
+(Used 1×)
+(SwipeToAction)</div>"]:::multiConsumer
+  prop_notemodal["<div title="Prop: NoteModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/actions/noteModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartCheck.tsx"><b>Prop:</b> NoteModal
+(Used 2×)
+(noteModal, CartCheck)</div>"]:::multiConsumer
+  prop_ricloseline["<div title="Prop: RiCloseLine
+Consumers: 1
+Used in: /home/ctp/Github/shuk-sham/components/auth/UserAuthModal.tsx"><b>Prop:</b> RiCloseLine
+(Used 1×)
+(UserAuthModal)</div>"]:::multiConsumer
+  prop_checkout["<div title="Prop: Checkout
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/checkout/Checkout.tsx, /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx"><b>Prop:</b> Checkout
+(Used 2×)
+(Checkout, CheckoutModal)</div>"]:::multiConsumer
+  prop_checkoutmodal["<div title="Prop: CheckoutModal
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/checkout/CheckoutModal.tsx, /home/ctp/Github/shuk-sham/components/shopping-cart/CartButton.tsx"><b>Prop:</b> CheckoutModal
+(Used 2×)
+(CheckoutModal, CartButton)</div>"]:::multiConsumer
+  prop_categorynavigation["<div title="Prop: CategoryNavigation
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx, /home/ctp/Github/shuk-sham/components/browse/CategoryNavigationBar.tsx"><b>Prop:</b> CategoryNavigation
+(Used 2×)
+(BrowseViewMain, CategoryNavigationBar)</div>"]:::multiConsumer
+  prop_productsection["<div title="Prop: ProductSection
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/BrowseViewMain.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx"><b>Prop:</b> ProductSection
+(Used 2×)
+(BrowseViewMain, ProductSection)</div>"]:::multiConsumer
+  prop_productcardwrapper["<div title="Prop: ProductCardWrapper
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/components/browse/ProductCardWrapper.tsx, /home/ctp/Github/shuk-sham/components/browse/ProductSection.tsx"><b>Prop:</b> ProductCardWrapper
+(Used 2×)
+(ProductCardWrapper, ProductSection)</div>"]:::multiConsumer
+  prop_formatcacheage["<div title="Prop: formatCacheAge
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/api/index.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"><b>Prop:</b> formatCacheAge
+(Used 3×)
+(formatting, index, index)</div>"]:::multiConsumer
+  prop_formatcachetime["<div title="Prop: formatCacheTime
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"><b>Prop:</b> formatCacheTime
+(Used 2×)
+(formatting, index)</div>"]:::multiConsumer
+  prop_formathumantime["<div title="Prop: formatHumanTime
+Consumers: 2
+Used in: /home/ctp/Github/shuk-sham/lib/utils/formatting.ts, /home/ctp/Github/shuk-sham/lib/utils/cache/index.ts"><b>Prop:</b> formatHumanTime
+(Used 2×)
+(formatting, index)</div>"]:::multiConsumer
+  prop_get["<div title="Prop: GET
+Consumers: 9
+Used in: /home/ctp/Github/shuk-sham/app/api/order/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/products/route.ts, /home/ctp/Github/shuk-sham/app/api/order/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/order/customer/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/category/route.ts, /home/ctp/Github/shuk-sham/app/api/[locale]/products/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/me/route.ts, /home/ctp/Github/shuk-sham/app/api/order/customer/[id]/route.ts"><b>Prop:</b> GET
+(Used 9×)
+(route, route, route, ...)</div>"]:::multiConsumer
+  prop_post["<div title="Prop: POST
+Consumers: 6
+Used in: /home/ctp/Github/shuk-sham/app/api/order/route.ts, /home/ctp/Github/shuk-sham/app/api/monitoring/metrics/route.ts, /home/ctp/Github/shuk-sham/app/api/users/route.ts, /home/ctp/Github/shuk-sham/app/api/users/logout/route.ts, /home/ctp/Github/shuk-sham/app/api/users/send-otp/route.ts, /home/ctp/Github/shuk-sham/app/api/users/verify-otp/route.ts"><b>Prop:</b> POST
+(Used 6×)
+(route, route, route, ...)</div>"]:::multiConsumer
+  prop_put["<div title="Prop: PUT
+Consumers: 3
+Used in: /home/ctp/Github/shuk-sham/app/api/order/[id]/route.ts, /home/ctp/Github/shuk-sham/app/api/users/route.ts, /home/ctp/Github/shuk-sham/app/api/users/[id]/route.ts"><b>Prop:</b> PUT
+(Used 3×)
+(route, route, route)</div>"]:::multiConsumer
+  end
+
+  subgraph ComponentProps["Component Props"]
+    subgraph parsecacheheaders_props["parseCacheHeaders Props"]
+  parsecacheheaders_prop_headers["<div title="Prop: headers in parseCacheHeaders
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"><b>headers</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph formattime_props["formatTime Props"]
+  formattime_prop_ms["<div title="Prop: ms in formatTime
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"><b>ms</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph fetchendpoint_props["fetchEndpoint Props"]
+  fetchendpoint_prop_url["<div title="Prop: url in fetchEndpoint
+Type: undefined
+File: /home/ctp/Github/shuk-sham/test-cache.js"><b>url</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph dataprovider_props["DataProvider Props"]
+  dataprovider_prop_destructured["<div title="Prop: destructured in DataProvider
+Type: undefined
+File: /home/ctp/Github/shuk-sham/contexts/DataContext.tsx"><b>destructured</b>
+Type: undefined</div>"]:::prop
+    end
+    subgraph conditionalhero_props["ConditionalHero Props"]
+  conditionalhero_prop_destructured["<div title="Prop: destructured in ConditionalHero
+Type: undefined
+File: /home/ctp/Github/shuk-sham/components/ConditionalHero.tsx"><b>destructured</b>
+Type: undefined</div>"]:::prop
+    end
+    more_components["...and 70 more components"]
+  end
+
+  %% Import relationships
+  middleware --> middleware
+  routing --> middleware
+  routing --> layout
+  routing --> page
+  routing --> request
+  routing --> routing
+  next --> next_config
+  next --> layout
+  next --> page
+  plugin --> next_config
+  tailwindcss --> tailwind_config
+  useuser --> authcontext
+  useuser --> menu
+  useuser --> checkout
+  useuser --> cartbutton
+  useuser --> cartcheck
+  logger --> authcontext
+  logger --> datacontext
+  logger --> backgroundfetcher
+  logger --> userdashboard
+  logger --> layout
+  logger --> providers
+  logger --> createentityhook
+  logger --> useproduct
+  logger --> useuser
+  logger --> cache_diagnostic
+  logger --> route
+  logger --> fetchers
+  logger --> user_api
+  logger --> wp_api
+  logger --> redis
+  logger --> wp_cache
+  logger --> cache_metrics
+  global --> cartcontext
+  global --> datacontext
+  global --> backgroundfetcher
+  global --> conditionalhero
+  global --> headersearch
+  global --> hero
+  global --> productbadges
+  global --> productcard
+  global --> productquickview
+  global --> productslistmain
+  global --> saleribbon
+  global --> singleproductview
+  global --> siteconfig
+  global --> confirmationmodal
+  global --> emptycartnotification
+  global --> productsearchmanager
+  global --> searchresults
+  global --> shineeffect
+  global --> swipetoaction
+  global --> notemodal
+  global --> userauthmodal
+  global --> browseviewmain
+  global --> categorynavigationbar
+  global --> productcardwrapper
+  global --> productsection
+  global --> createentityhook
+  global --> usecategories
+  global --> useorders
+  global --> useproduct
+  global --> useproducts
+  global --> useuser
+  global --> cartitem
+  global --> auth
+  global --> ui
+  global --> fetchers
+  global --> index
+  global --> user_api
+  global --> wp_api
+  global --> wp_cache
+  global --> page
+  global --> route
+  hooks --> cartcontext
+  hooks --> datacontext
+  hooks --> browseviewmain
+  confirmationmodal --> cartcontext
+  emptycartnotification --> cartcontext
+  navigation --> cartcontext
+  navigation --> datacontext
+  navigation --> backgroundfetcher
+  navigation --> categoryselectionmain
+  navigation --> conditionalhero
+  navigation --> header
+  navigation --> headersearch
+  navigation --> hero
+  navigation --> productbadges
+  navigation --> productbreadcrumb
+  navigation --> productcard
+  navigation --> productquickview
+  navigation --> productslistmain
+  navigation --> saleribbon
+  navigation --> shoppingcart
+  navigation --> singleproductview
+  navigation --> userdashboard
+  navigation --> layout
+  navigation --> not_found
+  navigation --> orderhistory
+  navigation --> personalinfo
+  navigation --> confirmationmodal
+  navigation --> menu
+  navigation --> productsearchmanager
+  navigation --> swipetoaction
+  navigation --> userauthmodal
+  navigation --> checkout
+  navigation --> checkoutmodal
+  navigation --> browseviewmain
+  navigation --> categorynavigationbar
+  navigation --> cartbutton
+  navigation --> cartcheck
+  navigation --> cartstatepersistencehandler
+  navigation --> emptycartnotification
+  navigation --> page
+  navigation --> routing
+  dealscontext --> cartcontext
+  dealscontext --> providers
+  dealscontext --> dealsdebugpanel
+  dealscontext --> usedealsdebug
+  deal --> cartcontext
+  deal --> dealscontext
+  deal --> dealsdebugpanel
+  deal --> usecartdiscounts
+  deal --> cartitem
+  deal --> index
+  loading --> datacontext
+  loading --> singleproductview
+  loading --> page
+  error --> datacontext
+  swr --> backgroundfetcher
+  swr --> providers
+  swr --> swr
+  swr --> createentityhook
+  swr --> useorders
+  swr --> useproduct
+  swr --> useuser
+  swr --> swr_config
+  fetchers --> backgroundfetcher
+  fetchers --> createentityhook
+  fetchers --> usecategories
+  fetchers --> useorders
+  fetchers --> useproduct
+  fetchers --> useproducts
+  fetchers --> useuser
+  providers --> backgroundfetcher
+  providers --> browseviewwrapper
+  providers --> layout
+  constants --> backgroundfetcher
+  constants --> providers
+  constants --> createentityhook
+  constants --> useorders
+  constants --> useproduct
+  constants --> useuser
+  constants --> index
+  constants --> swr_config
+  constants --> wp_cache
+  constants --> route
+  browseviewmain --> browseviewwrapper
+  image --> categoryselectionmain
+  image --> headersearch
+  image --> hero
+  image --> productbadges
+  image --> productcard
+  image --> productquickview
+  image --> shoppingcart
+  image --> singleproductview
+  image --> menu
+  image --> productsearchmanager
+  image --> searchresults
+  image --> checkout
+  image --> cartcheck
+  datacontext --> categoryselectionmain
+  datacontext --> productslistmain
+  datacontext --> layout
+  datacontext --> productsearchmanager
+  datacontext --> devtools
+  hero --> conditionalhero
+  lucide_react --> header
+  lucide_react --> productslistmain
+  lucide_react --> menu
+  menu --> header
+  productsearchmanager --> header
+  next_intl --> headersearch
+  next_intl --> singleproductview
+  next_intl --> userdashboard
+  next_intl --> layout
+  next_intl --> page
+  next_intl --> orderhistory
+  next_intl --> personalinfo
+  next_intl --> emptycartnotification
+  index --> headersearch
+  index --> productquickview
+  index --> productslistmain
+  index --> singleproductview
+  index --> searchresults
+  index --> productcardwrapper
+  index --> route
+  index --> wp_cache
+  link --> hero
+  link --> productbreadcrumb
+  link --> shoppingcart
+  link --> menu
+  link --> checkout
+  link --> cartcheck
+  link --> page
+  cartcontext --> productcard
+  cartcontext --> productquickview
+  cartcontext --> shoppingcart
+  cartcontext --> singleproductview
+  cartcontext --> layout
+  cartcontext --> orderhistory
+  cartcontext --> searchresults
+  cartcontext --> checkout
+  cartcontext --> dealsdebugpanel
+  cartcontext --> cartbutton
+  cartcontext --> cartcheck
+  cartcontext --> cartstatepersistencehandler
+  saleribbon --> productcard
+  saleribbon --> singleproductview
+  he --> productcard
+  he --> swipetoaction
+  he --> cartbutton
+  ar --> productcard
+  ar --> swipetoaction
+  ar --> cartbutton
+  singleproductview --> productpagecontent
+  productbadges --> productquickview
+  productbadges --> singleproductview
+  productcard --> productslistmain
+  productcard --> productcardwrapper
+  productquickview --> productslistmain
+  productquickview --> browseviewmain
+  usedragscroll --> productslistmain
+  authcontext --> productslistmain
+  authcontext --> userdashboard
+  authcontext --> layout
+  authcontext --> authbutton
+  useorders --> productslistmain
+  useorders --> orderhistory
+  swipetoaction --> shoppingcart
+  swipetoaction --> confirmationmodal
+  swipetoaction --> cartbutton
+  swipetoaction --> cartcheck
+  sharemodal --> singleproductview
+  sharemodal --> menu
+  useproduct --> singleproductview
+  productbreadcrumb --> singleproductview
+  userprofile --> userdashboard
+  server --> layout
+  server --> page
+  server --> route
+  server --> auth
+  server --> index
+  server --> request
+  globals --> layout
+  cartbutton --> layout
+  heromessages --> layout
+  cartstatepersistencehandler --> layout
+  script --> layout
+  siteconfig --> layout
+  siteconfig --> page
+  header --> layout
+  conditionalhero --> layout
+  devtools --> layout
+  dealsdebugpanel --> layout
+  categoryselectionmain --> page
+  productslistmain --> page
+  backgroundfetcher --> page
+  checkout --> orderhistory
+  checkout --> checkout
+  checkout --> checkoutmodal
+  user --> personalinfo
+  user --> addressmodal
+  addressmodal --> menu
+  addressmodal --> cartcheck
+  helpmodal --> menu
+  userauthmodal --> menu
+  userauthmodal --> authbutton
+  userauthmodal --> cartbutton
+  userauthmodal --> cartcheck
+  useflasheffect --> menu
+  useflasheffect --> searchresults
+  searchresults --> productsearchmanager
+  shineeffect --> swipetoaction
+  ri --> authbutton
+  ri --> userauthmodal
+  checkout --> checkoutmodal
+  categorynavigationbar --> browseviewmain
+  productsection --> browseviewmain
+  productcardwrapper --> productsection
+  react_intersection_observer --> productsection
+  checkoutmodal --> cartbutton
+  user_api --> cartbutton
+  notemodal --> cartcheck
+  cache --> swr
+  cache --> index
+  cache --> redis
+  cartitem --> usecartdiscounts
+  createentityhook --> usecategories
+  createentityhook --> useproducts
+  cache_metrics --> cache_diagnostic
+  cache_metrics --> route
+  product --> index
+  browseviewwrapper --> page
+  orderconfirmation --> page
+  userdashboard --> page
+  redis --> route
+  redis --> wp_cache
+  os --> route
+  wp_auth --> route
+  wp_auth --> wp_api
+  cartcheck --> page
+  buffer --> wp_auth
+  ioredis --> redis
+  memory_cache --> redis
+  cache_diagnostic --> redis
+  cache_diagnostic --> route
+  wp_api --> wp_cache
+  route --> wp_cache
+  perf_hooks --> cache_metrics
+  productpagecontent --> page
+  wp_cache --> page
+  wp_cache --> route
+  messages --> orderconfirmation
+  deals --> route
+  auth --> route
+  cache_keys --> route
+  uuid --> route
+  %% Context relationships
+  authcontext -->|creates| unnamedcontext
+  cartcontext -->|creates| unnamedcontext
+  datacontext -->|creates| unnamedcontext
+  dealscontext -->|creates| unnamedcontext
+  %% Props relationships
+  parsecacheheaders -->|has props| parsecacheheaders_props
+  formattime -->|has props| formattime_props
+  fetchendpoint -->|has props| fetchendpoint_props
+  confirmationmodal -->|has props| confirmationmodal_props
+  emptycartnotification -->|has props| emptycartnotification_props
+  dataprovider -->|has props| dataprovider_props
+  error -->|has props| error_props
+  image -->|has props| image_props
+  conditionalhero -->|has props| conditionalhero_props
+  hero -->|has props| hero_props
+  chevronleft -->|has props| chevronleft_props
+  productsearchmanager -->|has props| productsearchmanager_props
+  menu -->|has props| menu_props
+  link -->|has props| link_props
+  getmessages -->|has props| getmessages_props
+  saleribbon -->|has props| saleribbon_props
+  productpagecontent -->|has props| productpagecontent_props
+  singleproductview -->|has props| singleproductview_props
+  productquickview -->|has props| productquickview_props
+  productbadges -->|has props| productbadges_props
+  productlist -->|has props| productlist_props
+  getrandomproducts -->|has props| getrandomproducts_props
+  productcard -->|has props| productcard_props
+  chevronright -->|has props| chevronright_props
+  swipetoaction -->|has props| swipetoaction_props
+  productbreadcrumb -->|has props| productbreadcrumb_props
+  sharemodal -->|has props| sharemodal_props
+  personalinfo -->|has props| personalinfo_props
+  orderhistory -->|has props| orderhistory_props
+  generatemetadata -->|has props| generatemetadata_props
+  localelayout -->|has props| localelayout_props
+  script -->|has props| script_props
+  nextintlclientprovider -->|has props| nextintlclientprovider_props
+  swrprovider -->|has props| swrprovider_props
+  swrconfig -->|has props| swrconfig_props
+  providers -->|has props| providers_props
+  helpmodal -->|has props| helpmodal_props
+  addressmodal -->|has props| addressmodal_props
+  userauthmodal -->|has props| userauthmodal_props
+  searchresults -->|has props| searchresults_props
+  shineeffect -->|has props| shineeffect_props
+  notemodal -->|has props| notemodal_props
+  riuserline -->|has props| riuserline_props
+  ricloseline -->|has props| ricloseline_props
+  riuser3line -->|has props| riuser3line_props
+  riarrowleftsline -->|has props| riarrowleftsline_props
+  rilogoutboxrline -->|has props| rilogoutboxrline_props
+  checkout -->|has props| checkout_props
+  checkoutmodal -->|has props| checkoutmodal_props
+  categorynavigation -->|has props| categorynavigation_props
+  productsection -->|has props| productsection_props
+  productcardwrapper -->|has props| productcardwrapper_props
+  createentityhook -->|has props| createentityhook_props
+  usedragscroll -->|has props| usedragscroll_props
+  useflasheffect -->|has props| useflasheffect_props
+  useproduct -->|has props| useproduct_props
+  logcache -->|has props| logcache_props
+  getlayersymbol -->|has props| getlayersymbol_props
+  getactiontext -->|has props| getactiontext_props
+  formatcacheage -->|has props| formatcacheage_props
+  formatcachetime -->|has props| formatcachetime_props
+  formathumantime -->|has props| formathumantime_props
+  formatprice -->|has props| formatprice_props
+  suspense -->|has props| suspense_props
+  get -->|has props| get_props
+  post -->|has props| post_props
+  apifetcher -->|has props| apifetcher_props
+  userfetcher -->|has props| userfetcher_props
+  productsfetcher -->|has props| productsfetcher_props
+  productfetcher -->|has props| productfetcher_props
+  categoriesfetcher -->|has props| categoriesfetcher_props
+  ordersfetcher -->|has props| ordersfetcher_props
+  iscachevalid -->|has props| iscachevalid_props
+  fetchcurrentuser -->|has props| fetchcurrentuser_props
+  wpapifetch -->|has props| wpapifetch_props
+  isauthenticated -->|has props| isauthenticated_props
+  setauthheaders -->|has props| setauthheaders_props
+  clearauthcookies -->|has props| clearauthcookies_props
+  safecacheage -->|has props| safecacheage_props
+  calculatecachepercent -->|has props| calculatecachepercent_props
+  getcachediagnostics -->|has props| getcachediagnostics_props
+  addcacheheaders -->|has props| addcacheheaders_props
+  adddevelopmentcacheheaders -->|has props| adddevelopmentcacheheaders_props
+  getfromcache -->|has props| getfromcache_props
+  setincache -->|has props| setincache_props
+  deletefromcache -->|has props| deletefromcache_props
+  getcategorycachekey -->|has props| getcategorycachekey_props
+  getproductcachekey -->|has props| getproductcachekey_props
+  getusercachekey -->|has props| getusercachekey_props
+  transformcategories -->|has props| transformcategories_props
+  getcategories -->|has props| getcategories_props
+  getproducts -->|has props| getproducts_props
+  paginateproducts -->|has props| paginateproducts_props
+  pretransformproducts -->|has props| pretransformproducts_props
+  setmetricsenabled -->|has props| setmetricsenabled_props
+  trackcacheoperation -->|has props| trackcacheoperation_props
+  maptoobject -->|has props| maptoobject_props
+  withcachemetrics -->|has props| withcachemetrics_props
+  page -->|has props| page_props
+  put -->|has props| put_props
+  delete -->|has props| delete_props
+  prop_error -.->|used by| datacontext
+  prop_error -.->|used by| error
+  prop_image -.->|used by| categoryselectionmain
+  prop_image -.->|used by| headersearch
+  prop_image -.->|used by| hero
+  prop_conditionalhero -.->|used by| conditionalhero
+  prop_conditionalhero -.->|used by| layout
+  prop_hero -.->|used by| conditionalhero
+  prop_hero -.->|used by| hero
+  prop_chevronleft -.->|used by| header
+  prop_chevronleft -.->|used by| productslistmain
+  prop_chevronleft -.->|used by| menu
+  prop_productsearchmanager -.->|used by| header
+  prop_productsearchmanager -.->|used by| productsearchmanager
+  prop_menu -.->|used by| header
+  prop_menu -.->|used by| menu
+  prop_link -.->|used by| hero
+  prop_link -.->|used by| productbreadcrumb
+  prop_link -.->|used by| shoppingcart
+  prop_saleribbon -.->|used by| productcard
+  prop_saleribbon -.->|used by| singleproductview
+  prop_productpagecontent -.->|used by| productpagecontent
+  prop_productpagecontent -.->|used by| page
+  prop_productquickview -.->|used by| productquickview
+  prop_productquickview -.->|used by| productslistmain
+  prop_productquickview -.->|used by| browseviewmain
+  prop_productbadges -.->|used by| productquickview
+  prop_productbadges -.->|used by| singleproductview
+  prop_productlist -.->|used by| productslistmain
+  prop_productlist -.->|used by| page
+  prop_productlist -.->|used by| page
+  prop_productcard -.->|used by| productslistmain
+  prop_productcard -.->|used by| productcardwrapper
+  prop_swipetoaction -.->|used by| shoppingcart
+  prop_swipetoaction -.->|used by| confirmationmodal
+  prop_swipetoaction -.->|used by| cartbutton
+  prop_sharemodal -.->|used by| singleproductview
+  prop_sharemodal -.->|used by| menu
+  prop_sharemodal -.->|used by| sharemodal
+  prop_generatemetadata -.->|used by| layout
+  prop_generatemetadata -.->|used by| page
+  prop_generatemetadata -.->|used by| page
+  prop_helpmodal -.->|used by| helpmodal
+  prop_helpmodal -.->|used by| menu
+  prop_addressmodal -.->|used by| menu
+  prop_addressmodal -.->|used by| addressmodal
+  prop_addressmodal -.->|used by| cartcheck
+  prop_userauthmodal -.->|used by| menu
+  prop_userauthmodal -.->|used by| authbutton
+  prop_userauthmodal -.->|used by| cartbutton
+  prop_shineeffect -.->|used by| swipetoaction
+  prop_notemodal -.->|used by| notemodal
+  prop_notemodal -.->|used by| cartcheck
+  prop_ricloseline -.->|used by| userauthmodal
+  prop_checkout -.->|used by| checkout
+  prop_checkout -.->|used by| checkoutmodal
+  prop_checkoutmodal -.->|used by| checkoutmodal
+  prop_checkoutmodal -.->|used by| cartbutton
+  prop_categorynavigation -.->|used by| browseviewmain
+  prop_categorynavigation -.->|used by| categorynavigationbar
+  prop_productsection -.->|used by| browseviewmain
+  prop_productsection -.->|used by| productsection
+  prop_productcardwrapper -.->|used by| productcardwrapper
+  prop_productcardwrapper -.->|used by| productsection
+  prop_formatcacheage -.->|used by| formatting
+  prop_formatcacheage -.->|used by| index
+  prop_formatcacheage -.->|used by| index
+  prop_formatcachetime -.->|used by| formatting
+  prop_formatcachetime -.->|used by| index
+  prop_formathumantime -.->|used by| formatting
+  prop_formathumantime -.->|used by| index
+  prop_get -.->|used by| route
+  prop_get -.->|used by| route
+  prop_get -.->|used by| route
+  prop_post -.->|used by| route
+  prop_post -.->|used by| route
+  prop_post -.->|used by| route
+  prop_put -.->|used by| route
+  prop_put -.->|used by| route
+  prop_put -.->|used by| route
+  %% Object relationships
+  %% Array relationships
+  %% Map operations
+  items -->|mapped in| cartcontext
+  prevcart -->|mapped in| cartcontext
+  prev -->|mapped in| cartcontext
+  cartitems -->|mapped in| cartcontext
+  cartitems -->|mapped in| shoppingcart
+  cartitems -->|mapped in| checkout
+  dealsarray -->|mapped in| dealscontext
+  filteredcategories -->|mapped in| categoryselectionmain
+  dietaryflags -->|mapped in| headersearch
+  dietaryflags -->|mapped in| productbadges
+  searchresults -->|mapped in| headersearch
+  displayproducts -->|mapped in| productslistmain
+  containslist -->|mapped in| singleproductview
+  maycontainlist -->|mapped in| singleproductview
+  orders -->|mapped in| orderhistory
+  results -->|mapped in| searchresults
+  sortedmaincategories -->|mapped in| categorynavigationbar
+  visibleproducts -->|mapped in| productsection
+  itemswiththisdeal -->|mapped in| dealsdebugpanel
+  deals -->|mapped in| dealsdebugpanel
+  alldealstoshow -->|mapped in| dealsdebugpanel
+  allproducts -->|mapped in| wp_api
+  existinglineitems -->|mapped in| route
+  line_items -->|mapped in| route
+`;
+      
+      // Update server link to point to proper location
+      const serverLink = document.getElementById('server-link');
+      if (serverLink) {
+        const currentPath = window.location.pathname;
+        const filename = currentPath.split('/').pop();
+        serverLink.href = `http://localhost:8000/${filename}`;
+        serverLink.textContent = `http://localhost:8000/${filename}`;
+      }
+      
+      // Try to render in the main graph container
+      mermaid.mermaidAPI.render('graph', mermaidCode, (svgCode) => {
+        document.getElementById('graph').innerHTML = svgCode;
+        
+        // If we successfully rendered, hide the fallback section
+        const fallbackSection = document.getElementById('fallback-section');
+        if (fallbackSection) {
+          fallbackSection.style.display = 'none';
+        }
+        
+        // Setup zoom functionality
+        const svg = document.querySelector('#graph svg');
+        if (svg) {
+          let zoom = 1;
+          
+          document.getElementById('zoom-in').addEventListener('click', () => {
+            zoom += 0.1;
+            svg.style.transform = `scale(${zoom})`;
+          });
+          
+          document.getElementById('zoom-out').addEventListener('click', () => {
+            if (zoom > 0.2) zoom -= 0.1;
+            svg.style.transform = `scale(${zoom})`;
+          });
+          
+          document.getElementById('reset').addEventListener('click', () => {
+            zoom = 1;
+            svg.style.transform = `scale(${zoom})`;
+          });
+        }
+      });
+    } catch (error) {
+      document.getElementById('error-container').textContent = 'Error rendering graph: ' + error.message;
+      console.error('Mermaid error:', error);
+    }
+  </script>
+</body>
+</html>
