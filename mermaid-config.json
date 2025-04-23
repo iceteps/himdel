@@ -1,0 +1,26 @@
+{
+  "theme": "default",
+  "maxTextSize": 500000,
+  "fontSize": 12,
+  "flowchart": {
+    "htmlLabels": true,
+    "curve": "basis",
+    "rankSpacing": 60,
+    "nodeSpacing": 60,
+    "diagramPadding": 20
+  },
+  "er": {
+    "layoutDirection": "LR",
+    "minEntityWidth": 100,
+    "minEntityHeight": 75,
+    "entityPadding": 15
+  },
+  "fontFamily": "arial",
+  "altFontFamily": "sans-serif",
+  "logLevel": 1,
+  "securityLevel": "loose",
+  "themeVariables": {
+    "fontSize": "12px",
+    "fontFamily": "Arial, sans-serif"
+  }
+}

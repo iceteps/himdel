@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Himdell Dependency Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .controls button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      background: #4a6ee0;
+      color: white;
+      border: none;
+      border-radius: 3px;
+    }
+    
+    #graph {
+      overflow: auto;
+      margin-top: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      min-height: 400px;
+    }
+    
+    .mermaid {
+      font-size: 16px;
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .legend {
+      margin: 10px 0;
+      padding: 10px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+  
+    #graph svg {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Himdell Dependency Map</h1>
+  
+  <div class="legend">
+    <p>This diagram shows the dependencies between files in your project.</p>
+  </div>
+  
+  <!-- Error container -->
+  <div id="error-container" style="color: red; margin-bottom: 10px;"></div>
+  
+  <!-- Controls for zooming -->
+  <div class="controls">
+    <button id="zoom-in">+</button>
+    <button id="zoom-out">-</button>
+    <button id="reset">Reset</button>
+  </div>
+  
+  <div id="graph" class="mermaid">
+    <!-- Mermaid diagram will be rendered directly here -->
+  </div>
+  
+  <script>
+    // Initialize mermaid with safe settings
+    mermaid.initialize({ 
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      flowchart: {
+        htmlLabels: true,
+        curve: 'basis',
+        useMaxWidth: false
+      }
+    });
+
+    // Get the container
+    const graphContainer = document.getElementById('graph');
+    
+    // Setup zoom functionality
+    let zoom = 1;
+    const zoomIn = document.getElementById('zoom-in');
+    const zoomOut = document.getElementById('zoom-out');
+    const reset = document.getElementById('reset');
+
+    zoomIn.addEventListener('click', () => {
+      zoom += 0.1;
+      graphContainer.style.transform = `scale(${zoom})`;
+      graphContainer.style.transformOrigin = 'top left';
+    });
+    
+    zoomOut.addEventListener('click', () => {
+      if (zoom > 0.2) zoom -= 0.1;
+      graphContainer.style.transform = `scale(${zoom})`;
+      graphContainer.style.transformOrigin = 'top left';
+    });
+    
+    reset.addEventListener('click', () => {
+      zoom = 1;
+      graphContainer.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>
